@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ماميلون — معمل أسنان رقمي | بنغازي</title>
+  <meta name="description" content="Mamelon Digital Dental Lab — معمل أسنان رقمي في بنغازي: زيركون، إيماكس، تركيبات على الزرعات، أدلة جراحية، مع توصيل للعيادة ومتابعة الحالة عبر تلجرام.">
+  <meta name="theme-color" content="#050D1C">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_LY">
+  <meta property="og:title" content="ماميلون — معمل أسنان رقمي | بنغازي">
+  <meta property="og:description" content="زيركون، إيماكس، زرعات، أدلة جراحية — توصيل للعيادة ومتابعة الحالة عبر تلجرام.">
+  <meta property="og:image" content="assets/logo.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Mamelon Digital Dental Lab","alternateName":"ماميلون","description":"معمل أسنان رقمي في بنغازي","telephone":"+218940178088","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"21:00"}],"address":{"@type":"PostalAddress","addressLocality":"بنغازي","addressCountry":"LY"}}
+  </script>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #050D1C;
+      --ink-2: #0A1830;
+      --navy: #003466;
+      --gold: #E3B93C;
+      --gold-2: #F6DB8A;
+      --gold-d: #B8901F;
+      --ice: #9FC2E6;
+      --paper: #F4F1EA;
+      --text: #E8EDF7;
+      --mute: #8FA0BF;
+      --line: rgba(255,255,255,.09);
+      --glass: rgba(255,255,255,.045);
+      --ease: cubic-bezier(.2,.8,.2,1);
+      --display: 'Reem Kufi', 'IBM Plex Sans Arabic', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      background: var(--ink); color: var(--text);
+      line-height: 1.85; overflow-x: clip; max-width: 100vw;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ::selection { background: var(--gold); color: var(--ink); }
+    .wrap { width: min(1200px, 100% - 40px); margin-inline: auto; }
+    .lat { font-family: 'Space Grotesk', sans-serif; direction: ltr; unicode-bidi: isolate; }
+
+    /* خلفية: ضجيج + هالات */
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .06;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    }
+    .glow {
+      position: fixed; z-index: 1; width: 520px; height: 520px; border-radius: 50%;
+      left: 0; top: 0; pointer-events: none; opacity: 0;
+      background: radial-gradient(circle, rgba(227,185,60,.16), transparent 62%);
+      transform: translate(-50%, -50%); transition: opacity .4s; will-change: transform;
+    }
+    .progress { position: fixed; top: 0; inset-inline: 0; height: 3px; z-index: 100; background: linear-gradient(90deg, var(--gold), var(--gold-2)); transform: scaleX(0); transform-origin: right; }
+
+    /* شاشة البداية */
+    .pre {
+      position: fixed; inset: 0; z-index: 200; background: var(--ink);
+      display: grid; place-items: center;
+      animation: preOut .7s 2.6s var(--ease) forwards;
+    }
+    .pre-in { text-align: center; }
+    .pre-in img { width: min(520px, 78vw); border-radius: 28px; box-shadow: 0 0 120px rgba(0,86,170,.55); animation: pop 1s var(--ease) both; }
+    .pre-bar { width: min(520px, 78vw); height: 3px; background: var(--line); margin: 30px auto 0; overflow: hidden; border-radius: 3px; }
+    .pre-bar i { display: block; height: 100%; background: var(--gold); animation: load 1.8s .3s var(--ease) both; transform-origin: right; }
+    @keyframes pop { from { opacity: 0; transform: scale(.85) translateY(20px); } }
+    @keyframes load { from { transform: scaleX(0); } }
+    @keyframes preOut { to { opacity: 0; visibility: hidden; transform: translateY(-30px); } }
+
+    /* الشريط العلوي العائم */
+    .nav {
+      position: fixed; top: 16px; inset-inline: 0; z-index: 80; display: flex; justify-content: center; padding-inline: 16px;
+      transition: transform .5s var(--ease);
+    }
+    .nav.hide { transform: translateY(-120px); }
+    .nav-in {
+      max-width: 100%; display: flex; align-items: center; gap: 28px; padding: 8px 10px 8px 12px;
+      background: rgba(10,24,48,.62); border: 1px solid var(--line); border-radius: 999px;
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      width: min(920px, 100%); justify-content: space-between;
+    }
+    .nav-in img { height: 40px; border-radius: 10px; }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-links a { padding: 8px 16px; border-radius: 999px; font-size: 15px; font-weight: 500; color: var(--mute); transition: .25s; }
+    .nav-links a:hover { color: #fff; background: var(--glass); }
+    .burger { display: none; background: var(--glass); border: 1px solid var(--line); color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; }
+    .burger svg { width: 22px; height: 22px; }
+
+    .btn {
+      position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 28px; border-radius: 999px; font: 600 16px/1 'IBM Plex Sans Arabic', sans-serif;
+      border: 0; cursor: pointer; white-space: nowrap; overflow: hidden; isolation: isolate;
+      transition: box-shadow .3s, transform .3s var(--ease);
+    }
+    .btn svg { width: 19px; height: 19px; }
+    .btn-gold { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: var(--ink); box-shadow: 0 10px 36px rgba(227,185,60,.3); }
+    .btn-gold:hover { box-shadow: 0 14px 50px rgba(227,185,60,.55); }
+    .btn-gold::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); transform: translateX(120%); transition: transform .7s var(--ease); }
+    .btn-gold:hover::after { transform: translateX(-120%); }
+    .btn-line { color: #fff; border: 1px solid rgba(255,255,255,.25); background: var(--glass); }
+    .btn-line:hover { border-color: var(--gold); color: var(--gold-2); }
+    .btn-sm { padding: 12px 22px; font-size: 15px; }
+
+    /* البطل */
+    .hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding: 130px 0 90px; overflow: hidden; }
+    .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+    .aurora { position: absolute; inset: -20%; z-index: 0; filter: blur(70px); opacity: .9; pointer-events: none; }
+    .aurora i { position: absolute; border-radius: 50%; }
+    .aurora i:nth-child(1) { width: 46vw; height: 46vw; right: 2%; top: 5%; background: radial-gradient(circle, rgba(0,86,170,.65), transparent 65%); animation: drift 18s ease-in-out infinite alternate; }
+    .aurora i:nth-child(2) { width: 34vw; height: 34vw; left: 4%; bottom: -4%; background: radial-gradient(circle, rgba(227,185,60,.3), transparent 65%); animation: drift 22s ease-in-out infinite alternate-reverse; }
+    .aurora i:nth-child(3) { width: 26vw; height: 26vw; left: 38%; top: -6%; background: radial-gradient(circle, rgba(159,194,230,.22), transparent 65%); animation: drift 26s ease-in-out infinite alternate; }
+    @keyframes drift { to { transform: translate(6vw, 5vh) scale(1.2); } }
+    .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px 7px 14px; border-radius: 999px;
+      background: var(--glass); border: 1px solid var(--line); font-size: 14px; color: var(--gold-2); font-weight: 500;
+    }
+    .pill b { width: 8px; height: 8px; border-radius: 50%; background: #3DDC84; box-shadow: 0 0 0 0 rgba(61,220,132,.7); animation: ping 2s infinite; }
+    @keyframes ping { 70% { box-shadow: 0 0 0 10px rgba(61,220,132,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,132,0); } }
+    h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 7.4vw, 104px); line-height: 1.12; margin: 22px 0 6px; letter-spacing: -.5px; }
+    .ln { display: block; overflow: hidden; padding-block: .06em; }
+    .ln > span { display: inline-block; }
+    .grad { background: linear-gradient(100deg, var(--gold-2), var(--gold) 45%, #fff 80%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 6s linear infinite; }
+    @keyframes shine { to { background-position: -200% 0; } }
+    .lead { font-size: clamp(17px, 1.7vw, 21px); color: var(--mute); max-width: 560px; font-weight: 300; }
+    .hero .acts { margin-top: 34px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .scroll-hint { position: absolute; z-index: 2; bottom: 26px; left: 50%; transform: translateX(-50%); color: var(--mute); font-size: 12px; letter-spacing: 3px; display: grid; justify-items: center; gap: 8px; }
+    .scroll-hint i { width: 1px; height: 38px; background: linear-gradient(var(--gold), transparent); animation: scrollLine 1.8s infinite; transform-origin: top; }
+    @keyframes scrollLine { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+    /* مجسم الشعار */
+    .stage { position: relative; display: grid; place-items: center; aspect-ratio: 1; perspective: 1000px; }
+    .ring { position: absolute; inset: 0; animation: spin 28s linear infinite; }
+    .ring text { fill: var(--gold-2); font: 500 11.5px 'Space Grotesk', sans-serif; letter-spacing: 6px; }
+    @keyframes spin { to { transform: rotate(-360deg); } }
+    .ring2 { position: absolute; inset: 9%; border-radius: 50%; border: 1px dashed rgba(227,185,60,.35); animation: spin 40s linear infinite reverse; }
+    .tilt { position: relative; width: 66%; aspect-ratio: 1.15; transform-style: preserve-3d; will-change: transform; }
+    .tilt .card-logo {
+      position: absolute; inset: 0; border-radius: 34px; overflow: hidden;
+      background: linear-gradient(145deg, #0A4A8C, #002A55); border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 40px 90px rgba(0,0,0,.55), 0 0 90px rgba(0,86,170,.45), inset 0 1px 0 rgba(255,255,255,.25);
+      display: grid; place-items: center; animation: floaty 6s ease-in-out infinite;
+    }
+    .card-logo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.2) 50%, transparent 65%); transform: translateX(120%); animation: sweep 5s 1.5s infinite; }
+    @keyframes sweep { 55%, 100% { transform: translateX(-120%); } }
+    @keyframes floaty { 50% { transform: translateY(-14px); } }
+    .card-logo img { width: 94%; }
+    .chip3d {
+      position: absolute; padding: 8px 16px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #fff;
+      background: rgba(10,24,48,.7); border: 1px solid rgba(227,185,60,.5); backdrop-filter: blur(10px);
+      box-shadow: 0 14px 34px rgba(0,0,0,.4); transform: translateZ(70px); white-space: nowrap;
+    }
+    .chip3d::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); margin-inline-end: 8px; }
+    .c1 { top: 2%; right: 4%; animation: floaty 5s ease-in-out infinite; }
+    .c2 { top: 36%; left: -6%; animation: floaty 7s -2s ease-in-out infinite; }
+    .c3 { bottom: 4%; right: 0; animation: floaty 6s -1s ease-in-out infinite; }
+    .c4 { bottom: 26%; left: 2%; animation: floaty 8s -4s ease-in-out infinite; display: none; }
+
+    /* التاج ثلاثي الأبعاد */
+    .crown-col { display: grid; gap: 16px; justify-items: center; }
+    .crown-col .stage { width: 100%; max-width: 440px; }
+    .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; cursor: grab; touch-action: pan-y; }
+    .stage canvas:active { cursor: grabbing; }
+    .stage.ready .tilt { display: none; }
+    .crown-tag { position: absolute; bottom: 4%; inset-inline: 0; margin-inline: auto; width: max-content; z-index: 3; font-size: 13px; letter-spacing: 2px; padding: 6px 16px; border-radius: 999px; background: rgba(5,13,28,.7); border: 1px solid rgba(227,185,60,.45); color: var(--gold-2); backdrop-filter: blur(8px); opacity: 0; transition: opacity .6s; pointer-events: none; }
+    .stage.ready .crown-tag { opacity: 1; }
+    .drag-hint { position: absolute; top: 3%; inset-inline: 0; margin-inline: auto; width: max-content; z-index: 3; font-size: 13px; color: var(--mute); opacity: 0; transition: opacity .8s; pointer-events: none; }
+    .stage.ready .drag-hint { opacity: .85; }
+    .stage.ready .drag-hint.gone { opacity: 0; }
+    .cpanel { width: 100%; max-width: 440px; display: grid; gap: 12px; justify-items: center; padding: 16px; border-radius: 26px; background: rgba(10,24,48,.6); border: 1px solid var(--line); backdrop-filter: blur(14px); }
+    .cpanel[hidden] { display: none; }
+    .seg { display: inline-flex; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid var(--line); }
+    .seg button { font: 600 15px 'IBM Plex Sans Arabic', sans-serif; color: var(--mute); background: none; border: 0; padding: 9px 26px; border-radius: 999px; cursor: pointer; transition: .3s var(--ease); min-height: 40px; }
+    .seg button.on { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: var(--ink); }
+    .shades { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+    .shades button { min-width: 40px; height: 34px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; font: 700 11px 'Space Grotesk', sans-serif; color: #4a3d25; transition: transform .25s var(--ease), border-color .25s; padding-inline: 6px; box-shadow: inset 0 -6px 10px rgba(0,0,0,.08); }
+    .shades button:hover { transform: translateY(-3px) scale(1.06); }
+    .shades button.on { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(227,185,60,.3); transform: scale(1.08); }
+    .crow { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+
+    /* مخطط الأسنان */
+    .ord { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; padding: clamp(20px, 3vw, 36px); border-radius: 36px; background: radial-gradient(600px 300px at 0% 0%, rgba(0,110,220,.25), transparent 60%), var(--ink-2); border: 1px solid var(--line); }
+    .ord.flash { animation: flash 1.4s var(--ease); }
+    @keyframes flash { 30% { box-shadow: 0 0 0 4px rgba(227,185,60,.5), 0 0 80px rgba(227,185,60,.25); } }
+    .chart-wrap { min-width: 0; overflow-x: auto; padding-bottom: 6px; }
+    .chart { min-width: 600px; direction: ltr; display: grid; gap: 14px; padding: 8px 4px 0; }
+    .jaw-label { text-align: center; font-size: 11px; letter-spacing: 3px; color: var(--mute); }
+    .arch { display: flex; gap: 4px; justify-content: center; align-items: flex-start; padding-block: 10px 30px; }
+    .arch.lo { align-items: flex-start; padding-block: 30px 10px; }
+    .tooth { position: relative; flex: var(--w) 0 0; height: var(--h); border: 1px solid rgba(255,255,255,.22); background: linear-gradient(180deg, #F7F3EA, #CFC8B8); color: #4a3d25; font: 700 11px 'Space Grotesk', sans-serif; display: grid; align-content: end; justify-items: center; padding-bottom: 5px; cursor: pointer; transition: transform .3s var(--ease), background .3s, box-shadow .3s; min-width: 24px; }
+    .arch.up .tooth { border-radius: 14px 14px 22px 22px; }
+    .arch.lo .tooth { border-radius: 22px 22px 14px 14px; align-content: start; padding: 5px 0 0; }
+    .tooth:hover { transform: translateY(-4px); box-shadow: 0 8px 22px rgba(227,185,60,.35); }
+    .tooth.on { background: linear-gradient(180deg, var(--gold-2), var(--gold-d)); border-color: var(--gold-2); color: var(--ink); box-shadow: 0 8px 26px rgba(227,185,60,.5); transform: translateY(-4px) scale(1.06); }
+    .quick { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    .opts { display: grid; gap: 10px; align-content: start; }
+    .opts label { font-size: 14px; color: var(--mute); margin-bottom: -4px; }
+    .opts input, .opts select { font: inherit; color: #fff; padding: 14px 18px; border-radius: 16px; background: rgba(255,255,255,.05); border: 1px solid var(--line); width: 100%; transition: .3s; }
+    .opts select option { color: #000; }
+    .opts input::placeholder { color: var(--mute); }
+    .opts input:focus, .opts select:focus { outline: 0; border-color: var(--gold); background: rgba(227,185,60,.07); box-shadow: 0 0 0 4px rgba(227,185,60,.12); }
+    .opts .shades { justify-content: flex-start; }
+    .sum { padding: 12px 16px; border-radius: 16px; background: rgba(227,185,60,.08); border: 1px dashed rgba(227,185,60,.4); color: var(--gold-2); font-size: 14px; min-height: 48px; }
+    .sum.err { background: rgba(255,90,90,.1); border-color: rgba(255,120,120,.6); color: #ffb3b3; }
+    #oSend { width: 100%; }
+    .qcap { display: none; }
+    @media (max-width: 760px) {
+      .ord { padding: 16px; border-radius: 26px; gap: 16px; }
+      .chart-wrap { overflow: visible; }
+      .chart { min-width: 0; gap: 10px; padding: 0; }
+      .jaw-label { display: none; }
+      .arch, .arch.lo { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; padding: 0 0 8px; }
+      .arch .tooth { flex: none; width: 100%; min-width: 0; height: 46px; margin-top: 0 !important; border-radius: 12px; font-size: 12px; align-content: center; padding: 0; }
+      .arch.up .tooth, .arch.lo .tooth { border-radius: 12px; }
+      .arch .qcap { display: block; grid-column: 1 / -1; font-size: 12.5px; color: var(--gold-2); padding: 6px 2px 2px; text-align: right; direction: rtl; }
+      .quick .btn { flex: 1 1 auto; }
+    }
+    .qa { grid-template-columns: 1fr !important; max-width: 820px; }
+
+    /* الشريط المتحرك */
+    .marquee { border-block: 1px solid var(--line); background: var(--ink-2); overflow: hidden; direction: ltr; padding: 20px 0; position: relative; z-index: 2; }
+    .mq-track { display: flex; gap: 48px; width: max-content; animation: mq 32s linear infinite; }
+    .marquee:hover .mq-track { animation-play-state: paused; }
+    .mq-track span { font: 700 clamp(26px, 4vw, 46px)/1 'Space Grotesk', sans-serif; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.35); white-space: nowrap; display: flex; align-items: center; gap: 48px; }
+    .mq-track span::after { content: '✦'; color: var(--gold); -webkit-text-stroke: 0; font-size: .6em; }
+    .mq-track span:nth-child(3n) { color: var(--gold); -webkit-text-stroke: 0; }
+    @keyframes mq { to { transform: translateX(-50%); } }
+
+    section { position: relative; z-index: 2; padding: clamp(80px, 11vw, 150px) 0; }
+    .eyebrow { color: var(--gold); font-weight: 600; font-size: 14px; letter-spacing: 1px; display: flex; align-items: center; gap: 12px; }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: var(--gold); }
+    h2 { font-family: var(--display); font-weight: 700; font-size: clamp(34px, 5.2vw, 70px); line-height: 1.2; margin-top: 14px; }
+    .sec-head { max-width: 780px; margin-bottom: clamp(40px, 6vw, 72px); }
+    .sec-head p { color: var(--mute); font-size: 18px; margin-top: 14px; font-weight: 300; }
+
+    /* أرقام */
+    .stats { padding: 0; }
+    .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); border-inline-start: 1px solid var(--line); }
+    .stat { padding: 46px 28px; border-inline-end: 1px solid var(--line); }
+    .stat .n { font: 700 clamp(46px, 6vw, 84px)/1 var(--display); background: linear-gradient(180deg, #fff, var(--gold-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat p { color: var(--mute); margin-top: 8px; font-size: 15px; }
+
+    /* الخدمات — بنتو */
+    .bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .b {
+      position: relative; overflow: hidden; border-radius: 28px; padding: 30px; min-height: 250px;
+      background: var(--ink-2); border: 1px solid var(--line);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      transition: border-color .4s, transform .5s var(--ease); isolation: isolate;
+    }
+    .b::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(227,185,60,.2), transparent 55%); opacity: 0; transition: opacity .4s; }
+    .b:hover { border-color: rgba(227,185,60,.55); transform: translateY(-6px); }
+    .b:hover::before { opacity: 1; }
+    .b .no { position: absolute; top: 10px; inset-inline-start: 24px; font: 700 110px/1 'Space Grotesk', sans-serif; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.1); transition: .5s var(--ease); }
+    .b:hover .no { -webkit-text-stroke-color: rgba(227,185,60,.5); transform: translateY(8px); }
+    .b .ic { width: 58px; height: 58px; border-radius: 18px; display: grid; place-items: center; background: rgba(227,185,60,.12); color: var(--gold); margin-bottom: auto; border: 1px solid rgba(227,185,60,.25); align-self: flex-end; transition: .5s var(--ease); }
+    .b:hover .ic { transform: rotate(-12deg) scale(1.1); background: var(--gold); color: var(--ink); }
+    .b .ic svg { width: 28px; height: 28px; }
+    .b h3 { font-family: var(--display); font-size: 26px; font-weight: 600; margin-top: 18px; }
+    .b p { color: var(--mute); font-size: 15px; margin-top: 4px; font-weight: 300; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .tags span { font: 500 12.5px 'Space Grotesk', sans-serif; direction: ltr; padding: 3px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--ice); background: rgba(255,255,255,.03); }
+    .b-big { grid-column: span 2; grid-row: span 2; background: linear-gradient(160deg, #0B2B57, var(--ink-2) 60%); }
+    .b-big h3 { font-size: 40px; }
+    .b-big .no { font-size: 200px; }
+    .b-big::after { content: ''; position: absolute; width: 380px; height: 380px; border-radius: 50%; right: -120px; top: -120px; border: 1px solid rgba(227,185,60,.2); box-shadow: 0 0 0 40px rgba(227,185,60,.03), 0 0 0 90px rgba(227,185,60,.02); z-index: -1; }
+    .b-w { grid-column: span 2; }
+
+    /* مختبر الحفر */
+    .mlab > * { min-width: 0; }
+    .mlab { display: grid; grid-template-columns: .9fr 1.1fr; gap: 20px; align-items: stretch; }
+    .mcol, .chamber, .ord, .opts, .chart-wrap, .dsg, .qa, .tg { min-width: 0; }
+    .mcol { grid-template-columns: minmax(0, 1fr); display: grid; gap: 14px; align-content: start; }
+    .mphoto { position: relative; border-radius: 32px; overflow: hidden; aspect-ratio: 1; background: radial-gradient(circle at 50% 40%, #fff, #D4DAE6); border: 1px solid var(--line); display: grid; place-items: center; }
+    .mphoto img { width: 92%; height: 92%; object-fit: contain; transition: opacity .35s, transform .7s var(--ease); }
+    .mphoto img.sw { opacity: 0; transform: scale(.94); }
+    .mbadge { position: absolute; top: 16px; inset-inline-start: 16px; padding: 6px 16px; border-radius: 999px; background: var(--ink); color: var(--gold-2); border: 1px solid rgba(227,185,60,.5); font-weight: 700; font-size: 14px; }
+    .mtabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mtabs button { font: 700 14px 'Space Grotesk', sans-serif; direction: ltr; color: var(--mute); background: var(--glass); border: 1px solid var(--line); padding: 10px 18px; min-height: 44px; border-radius: 999px; cursor: pointer; transition: .3s var(--ease); }
+    .mtabs button:hover { color: #fff; border-color: rgba(227,185,60,.5); }
+    .mtabs button.on, .mtabs button.on:hover { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: var(--ink); border-color: transparent; }
+    .mnote { color: var(--mute); font-size: 14px; }
+    .chamber { grid-template-columns: minmax(0, 1fr); position: relative; display: grid; gap: 12px; align-content: start; padding: 14px; border-radius: 32px; background: linear-gradient(160deg, #0E2342, #070F20); border: 1px solid var(--line); box-shadow: inset 0 0 0 6px #0A1830, inset 0 0 0 7px rgba(255,255,255,.08), 0 30px 70px rgba(0,0,0,.4); }
+    .chamber::before { content: ''; position: absolute; inset-inline: 40px; top: 0; height: 3px; border-radius: 3px; background: linear-gradient(90deg, transparent, #F28C28, transparent); }
+    .ch-top { display: flex; justify-content: space-between; align-items: center; padding: 14px 14px 0; font-size: 13px; letter-spacing: 1.5px; color: var(--gold-2); }
+    .live { display: inline-flex; align-items: center; gap: 8px; color: #3DDC84; }
+    .live i { width: 8px; height: 8px; border-radius: 50%; background: #3DDC84; animation: ping 2s infinite; }
+    #millCv { max-width: 100%; width: 100%; aspect-ratio: 4 / 3; display: block; border-radius: 20px; background: #050B18; }
+    .ch-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .ch-steps span { text-align: center; font-size: 12.5px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 6px 4px; border-radius: 10px; color: var(--mute); border: 1px solid var(--line); transition: .4s; }
+    .ch-steps span.on { color: var(--ink); background: var(--gold); border-color: var(--gold); font-weight: 700; }
+    .ch-steps span.done { color: var(--gold-2); border-color: rgba(227,185,60,.4); }
+    .ch-bar { height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
+    .ch-bar i { display: block; height: 100%; width: 0; background: linear-gradient(270deg, var(--gold), var(--gold-2)); transform-origin: right; }
+    .ctl { display: flex; align-items: center; gap: 10px; padding: 0 4px 4px; }
+    .cbtn { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--glass); border: 1px solid var(--line); color: #fff; font-size: 16px; cursor: pointer; transition: .3s var(--ease); }
+    .cbtn:hover { border-color: var(--gold); color: var(--gold-2); transform: scale(1.06); }
+    .ctl input[type=range] { flex: 1; min-width: 0; accent-color: var(--gold); height: 44px; cursor: pointer; direction: ltr; }
+    .spd { display: flex; gap: 4px; flex: none; }
+    .spd button { font: 700 13px 'Space Grotesk', sans-serif; color: var(--mute); background: none; border: 1px solid var(--line); border-radius: 999px; min-width: 44px; height: 36px; cursor: pointer; transition: .3s; }
+    .spd button.on { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .mspec { display: flex; flex-wrap: wrap; gap: 8px; }
+    .mspec span { border: 1px solid rgba(227,185,60,.3); background: rgba(227,185,60,.06); color: var(--gold-2); padding: 6px 14px; border-radius: 999px; font-size: 13.5px; animation: chipIn .5s var(--ease) both; }
+    .mspec span:nth-child(2) { animation-delay: .05s; } .mspec span:nth-child(3) { animation-delay: .1s; } .mspec span:nth-child(4) { animation-delay: .15s; } .mspec span:nth-child(5) { animation-delay: .2s; }
+    @keyframes chipIn { from { opacity: 0; transform: translateY(8px); } }
+    .tfeat { list-style: none; display: grid; gap: 12px; }
+    .tfeat li { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border-radius: 22px; background: var(--glass); border: 1px solid var(--line); transition: .4s var(--ease); }
+    .tfeat li:hover { border-color: rgba(227,185,60,.5); transform: translateX(-4px); }
+    .tfeat i { flex: none; width: 40px; height: 40px; border-radius: 14px; display: grid; place-items: center; font: 700 18px 'Space Grotesk', sans-serif; font-style: normal; color: var(--gold); background: rgba(227,185,60,.12); border: 1px solid rgba(227,185,60,.3); }
+    .tfeat b { display: block; font-family: var(--display); font-size: 19px; font-weight: 600; }
+    .tfeat span { color: var(--mute); font-size: 14.5px; }
+    .chamber .btn { justify-self: start; }
+    .mshots { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .ms { position: relative; margin: 0; border-radius: 28px; overflow: hidden; aspect-ratio: 3 / 2; background: var(--ink-2); border: 1px solid var(--line); }
+    .ms img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; display: block; transition: transform 1.2s var(--ease); }
+    .ms:hover img { transform: scale(1.06); }
+    .ms::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(5,13,28,.88)); pointer-events: none; }
+    .ms figcaption { position: absolute; z-index: 1; inset-inline: 0; bottom: 0; padding: 22px 24px; display: grid; gap: 2px; }
+    .ms figcaption b { font: 600 22px/1.3 var(--display); }
+    .ms figcaption span { color: var(--gold-2); font-size: 14px; }
+
+    /* الأجهزة (قديم) */
+    .mgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .mc { border-radius: 28px; overflow: hidden; background: var(--ink-2); border: 1px solid var(--line); transition: transform .5s var(--ease), border-color .4s; }
+    .mc:hover { transform: translateY(-8px); border-color: rgba(227,185,60,.55); }
+    .mc .ph { aspect-ratio: 1; background: radial-gradient(circle at 50% 40%, #fff, #D9DEE8); display: grid; place-items: center; overflow: hidden; }
+    .mc .ph img { width: 100%; height: 100%; object-fit: contain; transition: transform .7s var(--ease); }
+    .mc:hover .ph img { transform: scale(1.08); }
+    .mc figcaption { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .mc figcaption b { color: var(--gold); font-size: 17px; }
+    .mc figcaption span { color: var(--mute); font-size: 14px; }
+
+    /* العمل */
+    .flow { background: var(--paper); color: var(--ink); border-radius: clamp(28px, 5vw, 64px); margin-inline: clamp(8px, 1.5vw, 20px); }
+    .flow h2 { color: var(--ink); }
+    .flow .sec-head p { color: #5B6578; }
+    .flow .eyebrow { color: var(--gold-d); } .flow .eyebrow::before { background: var(--gold-d); }
+    .steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .steps .line { position: absolute; top: 37px; inset-inline: 8%; height: 2px; background: rgba(5,13,28,.12); }
+    .steps .line i { position: absolute; inset: 0; background: linear-gradient(270deg, var(--gold-d), var(--navy)); transform-origin: right; transform: scaleX(0); }
+    .step { position: relative; text-align: center; padding: 0 8px; }
+    .step .dot { width: 76px; height: 76px; margin: 0 auto 22px; border-radius: 50%; background: var(--ink); color: var(--gold-2); display: grid; place-items: center; font: 700 28px/1 var(--display); box-shadow: 0 0 0 8px var(--paper), 0 0 0 9px rgba(5,13,28,.12); transition: .5s var(--ease); }
+    .step:hover .dot { background: var(--gold); color: var(--ink); transform: scale(1.12) rotate(8deg); }
+    .step h3 { font-family: var(--display); font-size: 24px; }
+    .step p { color: #5B6578; font-size: 15px; margin-top: 4px; }
+
+    .dsg { margin-top: clamp(50px, 7vw, 90px); display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+    .dsg-ph { position: relative; border-radius: 32px; overflow: hidden; box-shadow: 0 30px 70px rgba(5,13,28,.28); border: 1px solid rgba(5,13,28,.12); }
+    .dsg-ph img { width: 100%; height: auto; display: block; transition: transform 1.2s var(--ease); }
+    .dsg:hover .dsg-ph img { transform: scale(1.04); }
+    .dsg .scan { position: absolute; inset-inline: 0; top: 0; height: 90px; background: linear-gradient(180deg, transparent, rgba(227,185,60,.35), transparent); animation: scanY 4.5s ease-in-out infinite; pointer-events: none; }
+    @keyframes scanY { 0% { transform: translateY(-100%); } 100% { transform: translateY(900%); } }
+    .dsg figcaption h3 { font-family: var(--display); font-size: clamp(26px, 3.2vw, 40px); line-height: 1.25; margin-top: 10px; color: var(--ink); }
+    .dsg figcaption p { color: #5B6578; margin-top: 12px; font-size: 17px; }
+
+    /* لماذا */
+    .why-list { display: grid; }
+    .why-item { display: grid; grid-template-columns: 90px 1fr 1.1fr; gap: 24px; align-items: center; padding: 34px 0; border-top: 1px solid var(--line); transition: padding .5s var(--ease), background .4s; }
+    .why-item:last-child { border-bottom: 1px solid var(--line); }
+    .why-item:hover { padding-inline: 22px; background: linear-gradient(270deg, rgba(227,185,60,.08), transparent); }
+    .why-item .i { font: 500 18px 'Space Grotesk', sans-serif; color: var(--gold); }
+    .why-item h3 { font-family: var(--display); font-size: clamp(26px, 3.4vw, 46px); font-weight: 600; line-height: 1.2; }
+    .why-item p { color: var(--mute); font-weight: 300; font-size: 17px; }
+
+    /* تلجرام */
+    .tg { display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: center; padding: clamp(32px, 5vw, 70px); border-radius: clamp(28px, 4vw, 52px); background: radial-gradient(700px 400px at 100% 0%, rgba(0,110,220,.4), transparent 60%), linear-gradient(160deg, #0A2347, var(--ink-2)); border: 1px solid var(--line); overflow: hidden; }
+    .tg p { color: var(--mute); margin: 16px 0 28px; font-size: 18px; font-weight: 300; max-width: 520px; }
+    .phone { width: min(300px, 100%); margin-inline: auto; border-radius: 40px; padding: 10px; background: #02060F; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 40px 80px rgba(0,0,0,.5), 0 0 80px rgba(0,110,220,.3); transform: rotate(-4deg); transition: transform .6s var(--ease); }
+    .tg:hover .phone { transform: rotate(0); }
+    .screen { border-radius: 32px; background: #0B1A2F; padding: 18px 16px 20px; display: grid; gap: 10px; }
+    .scr-top { display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .scr-top .av { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #2AABEE, #1B7FD0); display: grid; place-items: center; }
+    .scr-top .av svg { width: 20px; height: 20px; color: #fff; }
+    .scr-top b { font-size: 15px; display: block; line-height: 1.3; } .scr-top small { color: var(--mute); font-size: 12px; }
+    .msg { background: #14304F; border-radius: 16px 16px 16px 4px; padding: 10px 14px; font-size: 13.5px; opacity: .35; transform: scale(.97); transition: .5s var(--ease); display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+    .msg.on { opacity: 1; transform: scale(1); background: linear-gradient(135deg, #1B5A9C, #14406F); box-shadow: 0 8px 26px rgba(0,100,220,.3); }
+    .msg em { font-style: normal; font-size: 12px; color: var(--gold-2); }
+
+    /* أسئلة ونموذج */
+    .qa { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 80px); align-items: start; }
+    details { border-top: 1px solid var(--line); padding: 22px 0; }
+    details:last-of-type { border-bottom: 1px solid var(--line); }
+    summary { list-style: none; cursor: pointer; font-family: var(--display); font-size: 22px; font-weight: 600; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font: 300 34px/1 'Space Grotesk', sans-serif; color: var(--gold); transition: transform .4s var(--ease); }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { color: var(--mute); margin-top: 10px; font-weight: 300; }
+    .formcard { padding: clamp(26px, 4vw, 44px); border-radius: 32px; background: var(--glass); border: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .formcard h3 { font-family: var(--display); font-size: 30px; margin-bottom: 4px; }
+    .formcard > p { color: var(--mute); margin-bottom: 22px; font-weight: 300; }
+    .form { display: grid; gap: 12px; }
+    .form input, .form select { font: inherit; color: #fff; padding: 15px 20px; border-radius: 16px; background: rgba(255,255,255,.05); border: 1px solid var(--line); transition: .3s; width: 100%; }
+    .form select option { color: #000; }
+    .form input::placeholder { color: var(--mute); }
+    .form input:focus, .form select:focus { outline: 0; border-color: var(--gold); background: rgba(227,185,60,.07); box-shadow: 0 0 0 4px rgba(227,185,60,.12); }
+
+    /* تواصل */
+    .contact-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .cc { grid-column: span 4; border-radius: 28px; padding: 30px; background: var(--ink-2); border: 1px solid var(--line); transition: .4s var(--ease); display: block; }
+    a.cc:hover { transform: translateY(-6px); border-color: var(--gold); background: #0E2140; }
+    .cc .ic { width: 52px; height: 52px; border-radius: 16px; background: rgba(227,185,60,.12); color: var(--gold); display: grid; place-items: center; margin-bottom: 38px; }
+    .cc .ic svg { width: 26px; height: 26px; }
+    .cc small { color: var(--mute); display: block; font-size: 14px; }
+    .cc strong { font: 600 26px/1.3 var(--display); display: block; margin-top: 2px; }
+    .cc strong.num { direction: ltr; text-align: right; font-family: 'Space Grotesk', sans-serif; }
+    .map { grid-column: span 12; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); min-height: 300px; filter: grayscale(.35) invert(.9) hue-rotate(180deg) contrast(.9); }
+    .map iframe { width: 100%; height: 100%; min-height: 300px; border: 0; display: block; }
+    .cc-time { grid-column: span 4; }
+
+    footer { position: relative; z-index: 2; overflow: hidden; padding: 70px 0 30px; border-top: 1px solid var(--line); }
+    .mega { font: 700 clamp(70px, 19vw, 300px)/.9 'Space Grotesk', sans-serif; direction: ltr; text-align: center; color: transparent; -webkit-text-stroke: 1px rgba(227,185,60,.45); letter-spacing: -.04em; white-space: nowrap; user-select: none; }
+    .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--mute); font-size: 14px; margin-top: 30px; }
+
+    .wa-float { position: fixed; bottom: 22px; left: 22px; z-index: 70; width: 60px; height: 60px; border-radius: 50%; background: #25D366; color: #fff; display: grid; place-items: center; box-shadow: 0 12px 30px rgba(37,211,102,.45); }
+    .wa-float::before { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #25D366; animation: ripple 2.2s infinite; }
+    @keyframes ripple { to { transform: scale(1.7); opacity: 0; } }
+    .wa-float svg { width: 31px; height: 31px; }
+
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero .acts, .lead { margin-inline: auto; justify-content: center; }
+      .crown-col { order: -1; width: min(440px, 100%); margin-inline: auto; }
+      .ord { grid-template-columns: 1fr; }
+      .hero { padding-top: 110px; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .bento { grid-template-columns: repeat(2, 1fr); }
+      .b-big, .b-w { grid-column: span 2; }
+      .b-big { grid-row: auto; }
+      .dsg, .mshots { grid-template-columns: 1fr; }
+      .dsg { grid-template-columns: 1fr; }
+      .mlab { grid-template-columns: 1fr; }
+      .mphoto { aspect-ratio: 4 / 3; }
+      .steps { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+      .steps .line { display: none; }
+      .why-item { grid-template-columns: 50px 1fr; } .why-item p { grid-column: 2; }
+      .tg, .qa { grid-template-columns: 1fr; }
+      .cc, .cc-time { grid-column: span 6; } .map { grid-column: span 12; }
+    }
+    @media (max-width: 680px) {
+      .nav-links { display: none; position: absolute; top: 74px; inset-inline: 16px; flex-direction: column; background: rgba(10,24,48,.95); backdrop-filter: blur(18px); border: 1px solid var(--line); border-radius: 28px; padding: 14px; }
+      .nav-links.open { display: flex; } .nav-links a { padding: 14px 18px; font-size: 17px; }
+      .burger { display: grid; place-items: center; }
+      .nav-in > .btn { display: none; }
+      .bento { grid-template-columns: 1fr; } .b-big, .b-w { grid-column: auto; } .b { min-height: 220px; }
+      .steps { grid-template-columns: 1fr; }
+      .cc, .cc-time, .map { grid-column: span 12; }
+      .c2 { left: 0; } .scroll-hint { display: none; }
+      .stat { padding: 30px 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .pre { animation-delay: .2s; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="prog"></div>
+  <div class="glow" id="glow"></div>
+  <div class="pre" aria-hidden="true"><div class="pre-in"><img src="assets/logo.png" alt=""><div class="pre-bar"><i></i></div></div></div>
+
+  <header class="nav" id="nav">
+    <div class="nav-in">
+      <a href="#top" aria-label="ماميلون"><img src="assets/logo.png" alt="Mamelon Digital Dental Lab" width="108" height="40"></a>
+      <nav class="nav-links" id="links">
+        <a href="#services">خدماتنا</a>
+        <a href="#how">طريقة العمل</a>
+        <a href="#track">المتابعة</a>
+        <a href="#order">اطلب</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+      <a class="btn btn-gold btn-sm mag" href="https://wa.me/218940178088" target="_blank" rel="noopener">تواصل الآن</a>
+      <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- البطل -->
+    <div class="hero" id="hero">
+      <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <canvas id="mesh" aria-hidden="true"></canvas>
+      <div class="wrap hero-grid">
+        <div>
+          <span class="pill" data-hero><b></b> معمل أسنان رقمي · بنغازي · مفتوح اليوم</span>
+          <h1>
+            <span class="ln"><span>تركيبات بدقة</span></span>
+            <span class="ln"><span><span class="grad">رقمية</span> تصل</span></span>
+            <span class="ln"><span>في موعدها</span></span>
+          </h1>
+          <p class="lead" data-hero>تصميم وتصنيع بالحاسوب لأطباء الأسنان والعيادات، مع توصيل حتى باب العيادة ومتابعة كل حالة لحظة بلحظة من هاتفك.</p>
+          <div class="acts" data-hero>
+            <a class="btn btn-gold mag" href="https://wa.me/218940178088" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+              ابدأ حالتك على واتساب
+            </a>
+            <a class="btn btn-line mag" href="#services">اكتشف خدماتنا</a>
+          </div>
+        </div>
+        <div class="crown-col" data-hero>
+          <div class="stage" id="stage">
+            <svg class="ring" viewBox="0 0 400 400" aria-hidden="true"><defs><path id="circ" d="M200,200 m-178,0 a178,178 0 1,1 356,0 a178,178 0 1,1 -356,0"/></defs><text><textPath href="#circ">DIGITAL DENTAL LAB ✦ BENGHAZI ✦ ZIRCON ✦ EMAX ✦ IMPLANT ✦</textPath></text></svg>
+            <div class="ring2" aria-hidden="true"></div>
+            <div class="tilt" id="tilt" aria-hidden="true">
+              <div class="card-logo"><img src="assets/logo.png" alt=""></div>
+              <span class="chip3d c1">Zircon</span>
+              <span class="chip3d c2">Emax</span>
+              <span class="chip3d c3">Surgical Guide</span>
+            </div>
+            <div class="crown-tag lat" id="crownTag" aria-live="polite">ZIRCON · A2</div>
+            <div class="drag-hint" id="dragHint" aria-hidden="true">اسحب لتدوير التاج ↔</div>
+          </div>
+          <div class="cpanel" id="cpanel" hidden>
+            <div class="seg" role="group" aria-label="مادة التاج">
+              <button type="button" class="on" data-mat="zircon">زيركون</button>
+              <button type="button" data-mat="emax">إيماكس</button>
+            </div>
+            <div class="shades" id="shades" role="group" aria-label="لون VITA"></div>
+            <div class="crow">
+              <button type="button" class="btn btn-gold btn-sm" id="orderCrown">اطلب هذا التاج</button>
+              <button type="button" class="btn btn-line btn-sm" id="replay">أعد الحفر ↻</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint lat" aria-hidden="true">SCROLL<i></i></div>
+    </div>
+
+    <!-- شريط -->
+    <div class="marquee" aria-hidden="true">
+      <div class="mq-track">
+        <span>Zircon</span><span>Emax</span><span>Implant</span><span>Surgical Guide</span><span>TiBase</span><span>PMMA</span><span>Night Guard</span><span>Mock Up</span>
+        <span>Zircon</span><span>Emax</span><span>Implant</span><span>Surgical Guide</span><span>TiBase</span><span>PMMA</span><span>Night Guard</span><span>Mock Up</span>
+      </div>
+    </div>
+
+    <!-- أرقام -->
+    <section class="stats">
+      <div class="wrap">
+        <div class="stat-row">
+          <div class="stat" data-r><div class="n"><span data-count="6">0</span></div><p>أيام عمل في الأسبوع</p></div>
+          <div class="stat" data-r><div class="n"><span data-count="12">0</span></div><p>ساعة استقبال يوميًا</p></div>
+          <div class="stat" data-r><div class="n"><span data-count="6">0</span></div><p>أقسام خدمات تحت سقف واحد</p></div>
+          <div class="stat" data-r><div class="n"><span data-count="4">0</span></div><p>مراحل تتبع لكل حالة</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الخدمات -->
+    <section id="services">
+      <div class="wrap">
+        <div class="sec-head" data-r>
+          <span class="eyebrow">خدماتنا</span>
+          <h2>كل ما تحتاجه عيادتك، <span class="grad">تحت سقف واحد</span></h2>
+          <p>خامات أصلية وتصميم رقمي في كل مرحلة، من التاج الواحد إلى إعادة التأهيل الكاملة.</p>
+        </div>
+        <div class="bento">
+          <div class="b b-big" data-r>
+            <span class="no">01</span>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5C10 3.8 5.5 3.3 4.4 7c-.9 3 .4 5.4 1.1 8 .8 3 .8 7 2.7 7.2 1.8.2 1.8-4.2 3.8-4.2s2 4.4 3.8 4.2c1.9-.2 1.9-4.2 2.7-7.2.7-2.6 2-5 1.1-8C18.5 3.3 14 3.8 12 5.5z"/></svg></div>
+            <h3>تيجان وجسور زيركون</h3>
+            <p>قوة عالية ومظهر طبيعي للأسنان الأمامية والخلفية، بتصميم وتفريز رقمي دقيق.</p>
+            <div class="tags"><span>Zircon</span><span>Zircon Ivoclar</span><span>Zircon lay</span></div>
+          </div>
+          <div class="b b-w" data-r>
+            <span class="no">02</span>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5 5.6.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.6-.8z"/></svg></div>
+            <h3>تجميلي — إيماكس</h3>
+            <p>قشور وتيجان زجاجية لأعلى درجات الشفافية والجمال.</p>
+            <div class="tags"><span>Emax</span><span>Mock Up</span></div>
+          </div>
+          <div class="b" data-r>
+            <span class="no">03</span>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 8h6l-1 4h-4zM10 12l-1 10h6l-1-10"/></svg></div>
+            <h3>الزرعات</h3>
+            <p>زيركون على الزرعات وقواعد تيتانيوم.</p>
+            <div class="tags"><span>Implant Zircon</span><span>TiBase</span></div>
+          </div>
+          <div class="b" data-r>
+            <span class="no">04</span>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></div>
+            <h3>أدلة جراحية</h3>
+            <p>دليل زرع رقمي يحدد الموضع والزاوية.</p>
+            <div class="tags"><span>Surgical Guide</span></div>
+          </div>
+          <div class="b b-w" data-r>
+            <span class="no">05</span>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9c0-3 3.6-5 8-5s8 2 8 5v2c0 4-3.6 9-8 9s-8-5-8-9z"/><path d="M8 10h8"/></svg></div>
+            <h3>مؤقتات وأجهزة</h3>
+            <p>تيجان مؤقتة، واقيات ليلية، وتركيبات تجميلية قابلة للإزالة.</p>
+            <div class="tags"><span>PMMA</span><span>Night Guard</span><span>Snap ON</span></div>
+          </div>
+          <div class="b b-w" data-r>
+            <span class="no">06</span>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M7 7h10M8 12h8M9 17h6"/></svg></div>
+            <h3>صب معدني ودعامات</h3>
+            <p>هياكل معدنية مصبوبة ودعامات جذرية.</p>
+            <div class="tags"><span>Cast</span><span>Post</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- تقنيتنا -->
+    <section id="tech" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head" data-r>
+          <span class="eyebrow">تقنيتنا</span>
+          <h2>أحدث تقنيات الحفر الرقمي، <span class="grad">لنتائج بدقة عالية</span></h2>
+          <p>نعتمد في ماميلون على أحدث تقنيات التصميم والحفر الرقمي، لتصلكم تركيبات تطابق التصميم المعتمد بدقة وثبات من حالة إلى أخرى.</p>
+        </div>
+        <div class="mlab" data-r>
+          <div class="mcol">
+            <div class="mtabs" id="mTabs" role="tablist" aria-label="نوع الحفر"></div>
+            <ul class="tfeat">
+              <li><i>5</i><div><b>حفر بخمسة محاور متزامنة</b><span>تفاصيل دقيقة للتيجان والجسور والزرعات، وزوايا يصعب الوصول إليها.</span></div></li>
+              <li><i>◐</i><div><b>حفر جاف ورطب</b><span>لمواد متنوعة: زيركون وPMMA وسيراميك زجاجي وغيرها.</span></div></li>
+              <li><i>∞</i><div><b>تشغيل متواصل</b><span>مبدّلات أقراص وأدوات لإنجاز الحالات بلا توقف.</span></div></li>
+              <li><i>✓</i><div><b>معايرة ومراقبة ذكية</b><span>معايرة تلقائية ومتابعة لتقدّم الحفر عن بُعد.</span></div></li>
+            </ul>
+          </div>
+          <div class="chamber">
+            <div class="ch-top"><span class="lat" id="chHud">ZIRCONIA · DRY · A2</span><span class="live lat"><i></i>LIVE</span></div>
+            <canvas id="millCv" role="img" aria-label="محاكاة حفر تاج زيركون"></canvas>
+            <div class="ch-steps" id="chSteps"><span>01 تصميم CAD</span><span>02 حفر أولي</span><span>03 حفر دقيق</span><span>04 تشطيب</span></div>
+            <div class="ctl">
+              <button type="button" class="cbtn" id="cPlay" aria-label="إيقاف مؤقت">⏸</button>
+              <input type="range" id="cSeek" min="0" max="12" step="0.01" value="0" aria-label="الجدول الزمني للحفر">
+              <div class="spd" id="cSpd" role="group" aria-label="سرعة العرض"><button type="button" data-s="1" class="on">1×</button><button type="button" data-s="2">2×</button><button type="button" data-s="4">4×</button></div>
+              <button type="button" class="cbtn" id="millReplay" aria-label="أعد المشاهدة">↻</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- طريقة العمل -->
+    <section id="how" class="flow">
+      <div class="wrap">
+        <div class="sec-head" data-r>
+          <span class="eyebrow">طريقة العمل</span>
+          <h2>من عيادتك وإليها في أربع خطوات</h2>
+        </div>
+        <div class="steps" id="steps">
+          <div class="line"><i id="lineFill"></i></div>
+          <div class="step" data-r><div class="dot">1</div><h3>الاستلام</h3><p>مندوبنا يستلم الطبعة أو المسح الرقمي من عيادتك.</p></div>
+          <div class="step" data-r><div class="dot">2</div><h3>التصميم الرقمي</h3><p>تصميم الحالة على الحاسوب حسب طلب الطبيب.</p></div>
+          <div class="step" data-r><div class="dot">3</div><h3>التصنيع</h3><p>تفريز وتشطيب بخامات أصلية ومراجعة جودة.</p></div>
+          <div class="step" data-r><div class="dot">4</div><h3>التوصيل</h3><p>تصل الحالة إلى العيادة مع مندوب المعمل.</p></div>
+        </div>
+        <figure class="dsg" data-r>
+          <div class="dsg-ph"><img src="assets/img/design.jpg" alt="محطة التصميم الرقمي في معمل ماميلون على برنامج exocad" width="1000" height="750" loading="lazy"><span class="scan" aria-hidden="true"></span></div>
+          <figcaption>
+            <span class="eyebrow">من داخل المعمل</span>
+            <h3>كل حالة تُصمَّم على الحاسوب أولًا</h3>
+            <p>نستقبل المسح الرقمي أو الطبعة، ونصمّم التاج على برنامج exocad قبل أن يبدأ الحفر، فتصلكم تركيبة تطابق التصميم المعتمد.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- لماذا -->
+    <section id="why">
+      <div class="wrap">
+        <div class="sec-head" data-r>
+          <span class="eyebrow">لماذا ماميلون</span>
+          <h2>دقة رقمية <span class="grad">والتزام بالموعد</span></h2>
+        </div>
+        <div class="why-list">
+          <div class="why-item" data-r><span class="i">01</span><h3>تصميم وتصنيع رقمي</h3><p>مسح رقمي وتصميم بالحاسوب وتفريز دقيق لكل حالة.</p></div>
+          <div class="why-item" data-r><span class="i">02</span><h3>توصيل حتى العيادة</h3><p>مندوب المعمل يستلم ويسلّم حتى باب عيادتك.</p></div>
+          <div class="why-item" data-r><span class="i">03</span><h3>متابعة لحظة بلحظة</h3><p>تعرف حالة كل تركيبة عبر بوت تلجرام دون اتصال.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- تلجرام -->
+    <section id="track" style="padding-top:0">
+      <div class="wrap">
+        <div class="tg" data-r>
+          <div>
+            <span class="eyebrow">متابعة الحالات</span>
+            <h2>حالاتك في جيبك، <span class="grad">عبر تلجرام</span></h2>
+            <p>كل طبيب يتعامل مع ماميلون يتابع حالاته من كل العيادات التي يعمل بها، ويطلب استلامًا من عيادته، ويطّلع على كشف الشهر — من هاتفه مباشرة.</p>
+            <a class="btn btn-gold mag" href="https://t.me/MamelonTrackBot" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.1 14.8c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.6 13 1.9 11.5c-1-.3-1-1 .2-1.5L20.6 2.9c.9-.3 1.6.2 1.3 1.4z"/></svg>
+              افتح بوت المتابعة
+            </a>
+          </div>
+          <div class="phone" aria-hidden="true">
+            <div class="screen">
+              <div class="scr-top"><div class="av"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.1 14.8c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.6 13 1.9 11.5c-1-.3-1-1 .2-1.5L20.6 2.9c.9-.3 1.6.2 1.3 1.4z"/></svg></div><div><b>Mamelon Track</b><small>بوت متابعة الحالات</small></div></div>
+              <div class="msg"><span>مسجّلة</span><em>1</em></div>
+              <div class="msg"><span>قيد التجهيز</span><em>2</em></div>
+              <div class="msg"><span>قيد التوصيل</span><em>3</em></div>
+              <div class="msg"><span>تم التسليم ✓</span><em>4</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- اطلب حالتك: مخطط الأسنان -->
+    <section id="order" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head" data-r>
+          <span class="eyebrow">اطلب حالتك</span>
+          <h2>حدّد الأسنان، <span class="grad">وأرسل في ثوانٍ</span></h2>
+          <p>اضغط على الأسنان المطلوبة على المخطط (ترقيم FDI)، اختر الخدمة واللون، وسيصلنا الطلب مرتبًا على واتساب.</p>
+        </div>
+        <div class="ord" id="ordBox" data-r>
+          <div class="chart-wrap">
+            <div class="chart" id="chart">
+              <div class="jaw-label lat">UPPER · العلوي</div>
+              <div class="arch up" id="archU"></div>
+              <div class="arch lo" id="archL"></div>
+              <div class="jaw-label lat">LOWER · السفلي</div>
+            </div>
+            <div class="quick">
+              <button type="button" class="btn btn-line btn-sm" data-q="up">الفك العلوي كاملًا</button>
+              <button type="button" class="btn btn-line btn-sm" data-q="lo">الفك السفلي كاملًا</button>
+              <button type="button" class="btn btn-line btn-sm" data-q="clear">مسح التحديد</button>
+            </div>
+          </div>
+          <div class="opts">
+            <label for="oSvc">الخدمة</label>
+            <select id="oSvc">
+              <option>زيركون</option><option>زيركون Ivoclar</option><option>إيماكس</option><option>زيركون على زرعة</option>
+              <option>دليل جراحي</option><option>مؤقت PMMA</option><option>واقي ليلي</option><option>أخرى</option>
+            </select>
+            <label>لون VITA</label>
+            <div class="shades" id="shades2" role="group" aria-label="لون VITA"></div>
+            <input id="oName" placeholder="اسم الطبيب" autocomplete="name">
+            <input id="oClinic" placeholder="اسم العيادة">
+            <input id="oNote" placeholder="ملاحظات (اختياري)">
+            <div class="sum" id="sum" aria-live="polite">لم تحدد أسنانًا بعد</div>
+            <button type="button" class="btn btn-gold mag" id="oSend">أرسل الطلب عبر واتساب</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- أسئلة -->
+    <section id="faq" style="padding-top:0">
+      <div class="wrap qa">
+        <div data-r>
+          <span class="eyebrow">أسئلة شائعة</span>
+          <h2 style="margin-bottom:30px">إجابات سريعة</h2>
+          <details><summary>كيف أطلب استلام حالة من عيادتي؟</summary><p>راسلنا على واتساب أو استخدم بوت المتابعة على تلجرام وسيصلك المندوب.</p></details>
+          <details><summary>هل تستقبلون المسح الرقمي؟</summary><p>نعم، نستقبل ملفات المسح الرقمي بالإضافة إلى الطبعات التقليدية.</p></details>
+          <details><summary>كم تستغرق الحالة حتى التسليم؟</summary><p>تختلف المدة حسب نوع التركيبة؛ تواصل معنا لتحديد الموعد.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- تواصل -->
+    <section id="contact" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head" data-r>
+          <span class="eyebrow">تواصل معنا</span>
+          <h2>جاهزون لاستقبال <span class="grad">حالتك القادمة</span></h2>
+        </div>
+        <div class="contact-grid">
+          <a class="cc" data-r href="https://wa.me/218940178088" target="_blank" rel="noopener">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></div>
+            <small>واتساب</small><strong class="num">094 017 8088</strong>
+          </a>
+          <a class="cc" data-r href="tel:0940178088">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+            <small>اتصال</small><strong class="num">094 017 8088</strong>
+          </a>
+          <div class="cc cc-time" data-r>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <small>يوميًا ما عدا الجمعة</small><strong>9 صباحًا — 9 مساءً</strong>
+          </div>
+          <div class="map" data-r>
+            <iframe title="موقع معمل ماميلون على الخريطة" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211.31494371268832!2d20.110822161310992!3d32.06819119959054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13831d50c4a4aca1%3A0xf3d6e2529eb1e951!2sMamelon%20Lab!5e0!3m2!1sar!2sly!4v1792255844886!5m2!1sar!2sly" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="mega" id="mega" aria-hidden="true">MAMELON</div>
+    <div class="wrap foot">
+      <span>© <span id="y">2026</span> Mamelon Digital Dental Lab — بنغازي، ليبيا</span>
+      <span>تركيبات أسنان رقمية للعيادات والأطباء</span>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/218940178088" target="_blank" rel="noopener" aria-label="واتساب">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+  </a>
+
+  <script src="assets/crown.js?v=2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+  (() => {
+    const $ = (s, c = document) => c.querySelector(s), $$ = (s, c = document) => [...c.querySelectorAll(s)];
+    /* ابدأ دائمًا من أعلى الصفحة (منع استعادة موضع التمرير أو القفز للأنكور) */
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    scrollTo(0, 0);
+    addEventListener('load', () => { scrollTo(0, 0); setTimeout(() => scrollTo(0, 0), 60); });
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    $('#y').textContent = new Date().getFullYear();
+
+    /* القائمة */
+    const links = $('#links'), burger = $('#burger');
+    burger.addEventListener('click', () => burger.setAttribute('aria-expanded', links.classList.toggle('open')));
+    links.addEventListener('click', () => { links.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); });
+
+    const WA = '218940178088';
+    const sm = (a, b, x) => { x = Math.min(1, Math.max(0, (x - a) / (b - a))); return x * x * (3 - 2 * x); };
+
+    /* ألوان VITA التقريبية */
+    const SHADES = [['BL1', '#F5F1E6'], ['A1', '#EEE0C4'], ['A2', '#E6D3AB'], ['A3', '#DEC79C'], ['A3.5', '#D4B88D'], ['B1', '#EFE4CC'], ['B2', '#E8D8B6'], ['C1', '#DBCDB0'], ['D2', '#E1D2B8']];
+    const state = { mat: 'zircon', shade: 'A2' };
+    const shadeSets = [];
+    function buildShades(el, withNone) {
+      const btns = [];
+      const add = (label, color, val, title) => {
+        const b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.dataset.v = val;
+        b.style.background = color; b.title = title; b.setAttribute('aria-label', title);
+        b.addEventListener('click', () => setShade(val)); el.appendChild(b); btns.push(b);
+      };
+      if (withNone) add('؟', 'linear-gradient(135deg,#eee,#bbb)', '', 'غير محدد');
+      SHADES.forEach(([n, c]) => add(n, c, n, 'لون ' + n));
+      shadeSets.push(btns); return btns;
+    }
+    const markShades = () => shadeSets.forEach(s => s.forEach(b => { const on = b.dataset.v === state.shade; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }));
+    const hooks = [];
+    function setShade(v) { state.shade = v; markShades(); hooks.forEach(h => h()); }
+    buildShades($('#shades'), false);
+    buildShades($('#shades2'), true);
+    markShades();
+
+    /* مخطط الأسنان */
+    const sel = new Set();
+    const dims = { 1: [30, 64], 2: [26, 58], 3: [30, 68], 4: [32, 54], 5: [32, 54], 6: [50, 58], 7: [46, 54], 8: [44, 52] };
+    const rng = (a, b) => Array.from({ length: Math.abs(b - a) + 1 }, (_, i) => a + (b > a ? i : -i));
+    const UP = [...rng(18, 11), ...rng(21, 28)], LO = [...rng(48, 41), ...rng(31, 38)];
+    const toothEls = {};
+    const sum = $('#sum');
+    function renderSum() {
+      sum.classList.remove('err');
+      sum.textContent = sel.size
+        ? `الأسنان (${sel.size}): ${[...sel].sort((a, b) => a - b).join('، ')} — ${$('#oSvc').value}${state.shade ? ' — اللون ' + state.shade : ''}`
+        : 'لم تحدد أسنانًا بعد';
+    }
+    function setTooth(n, on) { on ? sel.add(n) : sel.delete(n); const b = toothEls[n]; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }
+    function buildArch(el, nums, upper) {
+      const caps = upper ? ['الفك العلوي — الجهة اليمنى (18 ← 11)', 'الفك العلوي — الجهة اليسرى (21 ← 28)'] : ['الفك السفلي — الجهة اليمنى (48 ← 41)', 'الفك السفلي — الجهة اليسرى (31 ← 38)'];
+      nums.forEach((n, i) => {
+        if (i % 8 === 0) { const c = document.createElement('span'); c.className = 'qcap'; c.textContent = caps[i / 8]; el.appendChild(c); }
+        const d = dims[n % 10], c = Math.pow((i - 7.5) / 7.5, 2);
+        const b = document.createElement('button'); b.type = 'button'; b.className = 'tooth'; b.textContent = n;
+        b.style.setProperty('--w', d[0]); b.style.setProperty('--h', d[1] + 'px'); b.style.marginTop = (upper ? c * 24 : (1 - c) * 24) + 'px';
+        b.setAttribute('aria-pressed', 'false'); b.setAttribute('aria-label', 'سن رقم ' + n);
+        b.addEventListener('click', () => { setTooth(n, !sel.has(n)); renderSum(); });
+        toothEls[n] = b; el.appendChild(b);
+      });
+    }
+    buildArch($('#archU'), UP, true); buildArch($('#archL'), LO, false);
+    $$('[data-q]').forEach(b => b.addEventListener('click', () => {
+      const q = b.dataset.q;
+      if (q === 'clear') [...sel].forEach(n => setTooth(n, false));
+      else (q === 'up' ? UP : LO).forEach(n => setTooth(n, true));
+      renderSum();
+    }));
+    $('#oSvc').addEventListener('change', renderSum);
+    hooks.push(renderSum);
+    $('#oSend').addEventListener('click', () => {
+      const name = $('#oName').value.trim(), clinic = $('#oClinic').value.trim(), note = $('#oNote').value.trim();
+      if (!sel.size || !name) {
+        sum.classList.add('err');
+        sum.textContent = !sel.size ? 'حدّد سنًا واحدًا على الأقل من المخطط' : 'اكتب اسم الطبيب أولًا';
+        (name ? $('#chart') : $('#oName')).scrollIntoView({ block: 'center', behavior: 'smooth' });
+        return;
+      }
+      const list = [...sel].sort((a, b) => a - b).join('، ');
+      const t = `السلام عليكم، أنا د. ${name}${clinic ? ' من ' + clinic : ''}.\nأرغب بطلب: ${$('#oSvc').value}\nاللون: ${state.shade || 'غير محدد'}\nالأسنان (${sel.size}): ${list}${note ? '\nملاحظات: ' + note : ''}`;
+      window.open(`https://wa.me/${WA}?text=` + encodeURIComponent(t), '_blank', 'noopener');
+    });
+
+    /* التاج ثلاثي الأبعاد */
+    function initCrown() {
+      const T = window.THREE; if (!T) return;
+      const stage = $('#stage'), canvas = document.createElement('canvas');
+      canvas.setAttribute('aria-label', 'تاج سني ثلاثي الأبعاد: اسحب لتدويره'); canvas.setAttribute('role', 'img');
+      let renderer;
+      try { renderer = new T.WebGLRenderer({ canvas, antialias: true, alpha: true }); } catch (e) { return; }
+      stage.appendChild(canvas);
+      renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+      renderer.localClippingEnabled = true;
+      renderer.outputEncoding = T.sRGBEncoding;
+      renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = .95;
+
+      const scene = new T.Scene(), cam = new T.PerspectiveCamera(30, 1, .1, 50);
+      cam.position.set(0, 2.3, 6); cam.lookAt(0, -.1, 0);
+
+      /* بيئة انعكاس */
+      const env = new T.Scene(); env.background = new T.Color(0x0a1830);
+      const panel = (w, h, x, y, z, c, i) => { const m = new T.Mesh(new T.PlaneGeometry(w, h), new T.MeshBasicMaterial({ color: new T.Color(c).multiplyScalar(i), side: T.DoubleSide })); m.position.set(x, y, z); m.lookAt(0, 0, 0); env.add(m); };
+      panel(7, 3, 0, 5, 2, 0xffffff, 2.2); panel(2, 6, -5, 0, 2, 0xcfe3ff, 1.4); panel(2, 5, 5, 1, -1, 0xffe3a0, 1.4); panel(9, 1, 0, -3, 3, 0x4a6fa5, .6);
+      const pm = new T.PMREMGenerator(renderer); scene.environment = pm.fromScene(env, .03).texture;
+      scene.add(new T.HemisphereLight(0xcfe3ff, 0x0a1830, .25));
+      const key = new T.DirectionalLight(0xfff1d0, 1.0); key.position.set(3, 5, 4); scene.add(key);
+      const rim = new T.DirectionalLight(0x6aa8ff, .9); rim.position.set(-4, 2, -3); scene.add(rim);
+
+      /* هندسة تاج ضرس (إجرائية) */
+      function crownGeo(SEG, N1, N2) {
+        const H = 1, rings = [{ rs: 0, y: 0, q: 0 }];
+        for (let i = 0; i <= N1; i++) { const t = i / N1; rings.push({ rs: (.74 + .26 * sm(0, .5, t)) * (1 - .1 * sm(.55, 1, t)), y: t * H, q: 0 }); }
+        for (let i = 1; i <= N2; i++) { const q = i / N2; rings.push({ rs: .9 * Math.cos(q * Math.PI / 2), y: H + .12 * Math.pow(Math.sin(q * Math.PI / 2), .7), q }); }
+        const sq = th => { const c = Math.abs(Math.cos(th)), s = Math.abs(Math.sin(th)); return Math.pow(Math.pow(c, 3.4) + Math.pow(s, 3.4), -1 / 3.4); };
+        const C = [[.4, .38], [-.4, .38], [.4, -.38], [-.4, -.38]];
+        const occ = (x, z) => { let s = 0; for (const [cx, cz] of C) s += Math.exp(-((x - cx) ** 2 + (z - cz) ** 2) / .1); return .19 * s - .07 * (Math.exp(-x * x / .012) + Math.exp(-z * z / .012)); };
+        const pos = [], idx = [], W = SEG + 1;
+        rings.forEach(r => {
+          for (let k = 0; k <= SEG; k++) {
+            const th = k / SEG * Math.PI * 2, f = r.rs * sq(th), x = f * Math.cos(th) * 1.04, z = f * Math.sin(th) * .96;
+            pos.push(x, r.y + (r.q ? occ(x, z) * sm(0, .5, r.q) : 0), z);
+          }
+        });
+        for (let i = 0; i < rings.length - 1; i++) for (let k = 0; k < SEG; k++) { const a = i * W + k, b = a + W; idx.push(a, b, a + 1, b, b + 1, a + 1); }
+        const g = new T.BufferGeometry();
+        g.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
+        const n = g.attributes.normal;
+        for (let i = 0; i < rings.length; i++) { /* دمج طبيعي الدرزة */
+          const a = i * W, b = a + SEG, v = new T.Vector3(n.getX(a) + n.getX(b), n.getY(a) + n.getY(b), n.getZ(a) + n.getZ(b)).normalize();
+          n.setXYZ(a, v.x, v.y, v.z); n.setXYZ(b, v.x, v.y, v.z);
+        }
+        return g;
+      }
+      const planeSolid = new T.Plane(new T.Vector3(0, -1, 0), 0), planeWire = new T.Plane(new T.Vector3(0, 1, 0), 0);
+      const mats = {
+        zircon: { roughness: .45, clearcoat: .15, clearcoatRoughness: .5, envMapIntensity: .55, transparent: false, opacity: 1 },
+        emax: { roughness: .08, clearcoat: 1, clearcoatRoughness: .05, envMapIntensity: 1.0, transparent: true, opacity: .94 }
+      };
+      const solid = new T.MeshPhysicalMaterial({ color: new T.Color(SHADES[2][1]).convertSRGBToLinear(), metalness: 0, clippingPlanes: [planeSolid], side: T.FrontSide });
+      const wire = new T.MeshBasicMaterial({ color: 0xE3B93C, wireframe: true, transparent: true, opacity: .6, clippingPlanes: [planeWire] });
+      const group = new T.Group(); scene.add(group);
+      /* تاج حقيقي من ملف STL (محوَّل إلى assets/crown.js) أو مجسم إجرائي احتياطي */
+      function realGeo(C) {
+        const u8 = s => Uint8Array.from(atob(s), ch => ch.charCodeAt(0));
+        const v = new Int16Array(u8(C.v).buffer), ix = new Uint16Array(u8(C.i).buffer), p = new Float32Array(v.length);
+        for (let i = 0; i < v.length; i++) p[i] = v[i] / 32000;
+        const g = new T.BufferGeometry(); g.setAttribute('position', new T.BufferAttribute(p, 3)); g.setIndex(new T.BufferAttribute(ix, 1)); g.computeVertexNormals(); return g;
+      }
+      const real = !!window.CROWN;
+      let mesh, wmesh;
+      if (real) {
+        const g = realGeo(window.CROWN); wire.opacity = .22;
+        mesh = new T.Mesh(g, solid); wmesh = new T.Mesh(g, wire);
+        [mesh, wmesh].forEach(m => { m.scale.setScalar(1.25); m.position.y = 0; group.add(m); });
+      } else {
+        mesh = new T.Mesh(crownGeo(140, 36, 44), solid); wmesh = new T.Mesh(crownGeo(44, 14, 16), wire);
+        [mesh, wmesh].forEach(m => { m.scale.setScalar(1.2); m.position.y = -.65; group.add(m); });
+      }
+      group.rotation.x = .22;
+      const laser = new T.Mesh(new T.TorusGeometry(1.5, .014, 8, 120), new T.MeshBasicMaterial({ color: 0xF6DB8A }));
+      laser.rotation.x = Math.PI / 2; scene.add(laser);
+      const glow = new T.Mesh(new T.TorusGeometry(1.5, .06, 8, 120), new T.MeshBasicMaterial({ color: 0xE3B93C, transparent: true, opacity: .25 }));
+      glow.rotation.x = Math.PI / 2; laser.add(glow);
+
+      const target = new T.Color(SHADES[2][1]);
+      function applyLook() {
+        const s = SHADES.find(x => x[0] === state.shade) || SHADES[2];
+        target.set(s[1]).convertSRGBToLinear(); if (state.mat === 'emax') target.lerp(new T.Color(0xffffff).convertSRGBToLinear(), .1);
+        Object.assign(solid, mats[state.mat]); solid.needsUpdate = true;
+        $('#crownTag').textContent = `${state.mat.toUpperCase()} · ${state.shade || 'A2'}`;
+        $$('.seg button').forEach(b => { const on = b.dataset.mat === state.mat; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+      }
+      hooks.push(applyLook);
+      $$('.seg button').forEach(b => b.addEventListener('click', () => { state.mat = b.dataset.mat; applyLook(); }));
+      applyLook(); solid.color.copy(target);
+
+      /* الحفر: خط ليزر يصعد ويحوّل الشبكة إلى تاج */
+      let mill = null; const LV0 = real ? -1.1 : -.72, LV1 = 1.1;
+      const level = L => { planeSolid.constant = L; planeWire.constant = -L; laser.position.y = L; laser.visible = L < LV1 - .001; };
+      const startMill = (delay = 0) => { mill = { t0: performance.now() + delay, dur: 3400 }; level(LV0 - .3); };
+      level(reduce ? 5 : LV0 - .3);
+      if (reduce) wmesh.visible = false;
+      $('#replay').addEventListener('click', () => startMill(0));
+      $('#orderCrown').addEventListener('click', () => {
+        const map = { zircon: 'زيركون', emax: 'إيماكس' }; $('#oSvc').value = map[state.mat]; renderSum();
+        const box = $('#ordBox'); box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        box.classList.remove('flash'); void box.offsetWidth; box.classList.add('flash');
+      });
+
+      /* السحب */
+      let drag = false, lx = 0, vel = .006, auto = !reduce;
+      canvas.addEventListener('pointerdown', e => { drag = true; lx = e.clientX; canvas.setPointerCapture(e.pointerId); $('#dragHint').classList.add('gone'); });
+      canvas.addEventListener('pointermove', e => { if (!drag) return; vel = (e.clientX - lx) * .012; group.rotation.y += vel; lx = e.clientX; });
+      const up = () => { drag = false; }; canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
+
+      const resize = () => { const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); };
+      resize(); new ResizeObserver(resize).observe(stage);
+      let vis = true; new IntersectionObserver(([e]) => vis = e.isIntersecting).observe(stage);
+      let tilt = 0; stage.addEventListener('pointermove', e => { const r = stage.getBoundingClientRect(); tilt = ((e.clientY - r.top) / r.height - .5) * .25; });
+
+      (function frame(now) {
+        requestAnimationFrame(frame); if (!vis) return;
+        if (mill) { const p = Math.min(1, Math.max(0, (now - mill.t0) / mill.dur)), e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; level(p === 0 ? LV0 - .3 : LV0 + (LV1 - LV0) * e); if (p >= 1) { mill = null; wmesh.visible = false; level(5); } else wmesh.visible = true; }
+        if (!drag) { vel += (.004 * (auto ? 1 : 0) - vel) * .04; group.rotation.y += vel; }
+        group.rotation.x += (.22 + tilt - group.rotation.x) * .06;
+        solid.color.lerp(target, .12);
+        renderer.render(scene, cam);
+      })(performance.now());
+
+      stage.classList.add('ready'); $('#cpanel').hidden = false;
+      startMill(reduce ? 0 : 2900);
+    }
+    /* محاكاة الحفر */
+    const MACHINES = [
+      { n: 'زيركون · جاف', cfg: { axes: 5, wet: false, blank: 'disc', tools: 13 } },
+      { n: 'سيراميك زجاجي · رطب', cfg: { axes: 4, wet: true, blank: 'block' } },
+      { n: 'تشغيل متواصل', cfg: { axes: 5, wet: false, blank: 'disc', discs: 12, tools: 11 } }
+    ];
+    const mach = { i: 0, get name() { return MACHINES[this.i].n; } };
+    function initMill() {
+      const cv = $('#millCv'); if (!cv) return;
+      const W = 800, H = 600, dpr = Math.min(devicePixelRatio || 1, 2);
+      cv.width = W * dpr; cv.height = H * dpr;
+      const cx = cv.getContext('2d'); cx.scale(dpr, dpr);
+      const mat = document.createElement('canvas'); mat.width = W; mat.height = H; const m = mat.getContext('2d');
+      const cfg = () => MACHINES[mach.i].cfg;
+      const rr = (c, x, y, w, h, r) => { c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r); c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath(); };
+      const SIL = window.CROWN && window.CROWN.sil, asp = SIL ? window.CROWN.aspect : 320 / 340;
+      /* القرص الدائري أو البلوك المستطيل (للحفر الرطب) */
+      const DCX = 400, DCY = 300, DOUT = 262, DIN = 236, cw = SIL ? 300 : 260, CB = { w: cw, h: cw / asp, x: 400 - cw / 2, y: 0 };
+      CB.y = DCY - CB.h / 2;
+      const ECY = CB.y + CB.h / 2, HW = CB.w / 2 + 72, HH = CB.h / 2 + 62; /* جيب الحفر: قطع ناقص */
+      const BLK = { x: 150, y: 88, w: 500, h: 424 };
+      const BLUE = [150, 160, 190];
+      let D = 'M.30 .90C.20 .78 .10 .62 .12 .44C.13 .30 .17 .18 .26 .15C.33 .13 .38 .24 .43 .27C.47 .29 .53 .29 .57 .27C.62 .24 .67 .13 .74 .15C.83 .18 .87 .30 .88 .44C.90 .62 .80 .78 .70 .90C.60 .95 .40 .95 .30 .90Z';
+      let ctop = .28;
+      if (SIL) { /* شكل التاج الحقيقي: حدّه العلوي ثم السفلي من ملف STL */
+        D = 'M' + SIL.map(p => p[0] + ' ' + p[1]).join('L') + 'L' + SIL.slice().reverse().map(p => p[0] + ' ' + p[2]).join('L') + 'Z';
+        ctop = SIL.reduce((a, p) => Math.abs(p[0] - .5) < Math.abs(a[0] - .5) ? p : a)[1];
+      }
+      const crown = new Path2D(); crown.addPath(new Path2D(D), new DOMMatrix([CB.w, 0, 0, CB.h, CB.x, CB.y]));
+      /* وصلات تربط التاج بالقرص (أعلى + يمين + يسار) */
+      const conns = [
+        { x: DCX - 9, y: ECY - HH - 14, w: 18, h: CB.y + ctop * CB.h + 8 - (ECY - HH - 14) },
+        { x: DCX - HW - 14, y: ECY - 8, w: HW + 14 - CB.w * .3, h: 16 },
+        { x: DCX + CB.w * .3, y: ECY - 8, w: HW + 14 - CB.w * .3, h: 16 }
+      ];
+      /* مسار الأداة: صفوف خشنة داخل الجيب ثم تتبع حدود التاج */
+      const pts = []; let dir = 1;
+      for (let y = ECY - HH + 14; y <= ECY + HH - 14; y += 22) {
+        const t = (y - ECY) / HH, half = HW * Math.sqrt(Math.max(0, 1 - t * t)) - 12; if (half < 10) continue;
+        const a = DCX - half, b = DCX + half; pts.push(dir > 0 ? [a, y] : [b, y], dir > 0 ? [b, y] : [a, y]); dir *= -1;
+      }
+      const rough = pts.slice();
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'path'); svg.setAttribute('d', D);
+      const L = svg.getTotalLength(), cont = []; for (let i = 0; i <= 220; i++) { const p = svg.getPointAtLength(L * i / 220); cont.push([CB.x + p.x * CB.w, CB.y + p.y * CB.h]); }
+      cont.unshift([rough[rough.length - 1][0], rough[rough.length - 1][1]]);
+      const mk = arr => { const c = [0]; for (let i = 1; i < arr.length; i++) c.push(c[i - 1] + Math.hypot(arr[i][0] - arr[i - 1][0], arr[i][1] - arr[i - 1][1])); return { a: arr, c, len: c[c.length - 1] }; };
+      const P1 = mk(rough), P2 = mk(cont);
+      const at = (P, s) => { let lo = 0, hi = P.c.length - 1; while (hi - lo > 1) { const mid = (lo + hi) >> 1; P.c[mid] < s ? lo = mid : hi = mid; } const t = Math.min(1, Math.max(0, (s - P.c[lo]) / Math.max(1e-6, P.c[hi] - P.c[lo]))); return [P.a[lo][0] + (P.a[hi][0] - P.a[lo][0]) * t, P.a[lo][1] + (P.a[hi][1] - P.a[lo][1]) * t]; };
+
+      const hx = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+      const mix = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
+      const rgb = c => `rgb(${c[0]},${c[1]},${c[2]})`;
+      const shadeRGB = () => hx((SHADES.find(s => s[0] === state.shade) || SHADES[2])[1]);
+
+      function resetMat() {
+        m.globalCompositeOperation = 'source-over'; m.clearRect(0, 0, W, H);
+        if (cfg().blank === 'block') { /* بلوك سيراميك زجاجي (لون أزرق قبل التبلور) */
+          const base = mix(BLUE, [255, 255, 255], .12);
+          const g = m.createLinearGradient(BLK.x, BLK.y, BLK.x + BLK.w, BLK.y + BLK.h); g.addColorStop(0, rgb(mix(base, [255, 255, 255], .22))); g.addColorStop(1, rgb(mix(base, [40, 40, 70], .25)));
+          m.fillStyle = g; m.beginPath(); rr(m, BLK.x, BLK.y, BLK.w, BLK.h, 22); m.fill();
+          m.strokeStyle = 'rgba(0,0,0,.07)'; m.lineWidth = 1; for (let y = BLK.y + 16; y < BLK.y + BLK.h; y += 16) { m.beginPath(); m.moveTo(BLK.x, y); m.lineTo(BLK.x + BLK.w, y); m.stroke(); }
+          return;
+        }
+        const c = shadeRGB(), base = mix(c, [255, 255, 255], .18);
+        const rg = m.createRadialGradient(DCX - 60, DCY - 70, 60, DCX, DCY, DOUT); rg.addColorStop(0, rgb(mix(base, [255, 255, 255], .1))); rg.addColorStop(1, rgb(mix(base, [60, 50, 30], .28)));
+        m.fillStyle = rg; m.beginPath(); m.arc(DCX, DCY, DOUT, 0, 7); m.fill();
+        m.strokeStyle = 'rgba(0,0,0,.25)'; m.lineWidth = 2; m.beginPath(); m.arc(DCX, DCY, DIN + 4, 0, 7); m.stroke();
+        const ig = m.createRadialGradient(DCX - 70, DCY - 80, 40, DCX, DCY, DIN); ig.addColorStop(0, rgb(mix(base, [255, 255, 255], .25))); ig.addColorStop(1, rgb(base));
+        m.fillStyle = ig; m.beginPath(); m.arc(DCX, DCY, DIN, 0, 7); m.fill();
+        m.strokeStyle = 'rgba(0,0,0,.045)'; m.lineWidth = 1; for (let r = 20; r < DIN; r += 14) { m.beginPath(); m.arc(DCX, DCY, r, 0, 7); m.stroke(); }
+      }
+      const mkT = () => { const tc = cfg().tools ? .9 : 0, cont0 = 7.5, fin0 = cont0 + tc + 3; return { rough0: 1, roughD: 6.5, cont0, tc, contD: 3, fin0, finD: 1.6, end: fin0 + 1.6 + 2.4 }; };
+      let T = mkT(), discIdx = 1;
+      let tl = 0, s1 = 0, s2 = 0, prev = null, dust = [], vis = true, last = performance.now(), playing = true, speed = 1, dragging = false;
+      const stepsEl = $$('#chSteps span'), seekEl = $('#cSeek'), playBtn = $('#cPlay'), hud = $('#chHud');
+      seekEl.max = (T.fin0 + T.finD).toFixed(2);
+
+      const upd = () => { const c = cfg(); hud.textContent = `${c.wet ? 'GLASS CERAMIC · WET' : 'ZIRCONIA · DRY'} · ${state.shade || 'A2'}${c.discs ? ' · DISC ' + discIdx + '/' + c.discs : ''}`; };
+      function reset() { resetMat(); tl = 0; s1 = 0; s2 = 0; prev = null; dust = []; }
+      function carve(a, b, w) {
+        m.save(); m.beginPath();
+        if (cfg().blank === 'block') rr(m, BLK.x + 6, BLK.y + 6, BLK.w - 12, BLK.h - 12, 18); else m.arc(DCX, DCY, DIN - 3, 0, 7);
+        m.clip(); /* لا يمسّ الحفر الحلقة الخارجية */
+        m.globalCompositeOperation = 'destination-out'; m.lineCap = 'round'; m.lineWidth = w; m.strokeStyle = '#000';
+        m.beginPath(); m.moveTo(a[0], a[1]); m.lineTo(b[0], b[1]); m.stroke(); m.restore();
+        const wet = cfg().wet;
+        for (let i = 0; i < (wet ? 3 : 2); i++) dust.push({ x: b[0], y: b[1], vx: (Math.random() - .5) * (wet ? 190 : 140), vy: -Math.random() * 110 - 20, l: 1, c: wet ? Math.random() < .85 : Math.random() < .2 });
+        if (dust.length > 240) dust.splice(0, dust.length - 240);
+      }
+      function advance(P, from, to, w) {
+        let s = from;
+        while (s < to) { s = Math.min(to, s + 7); const p = at(P, s); if (prev) carve(prev, p, w); prev = p; }
+        return s;
+      }
+      function seek(t) { /* قفز إلى لحظة محددة بإعادة تنفيذ الحفر حتى تلك اللحظة */
+        resetMat(); prev = null; s1 = 0; s2 = 0; tl = t;
+        if (t > T.rough0) s1 = advance(P1, 0, P1.len * Math.min(1, (t - T.rough0) / T.roughD), 27);
+        if (t > T.cont0 + T.tc) { prev = P2.a[0]; s2 = advance(P2, 0, P2.len * Math.min(1, (t - T.cont0 - T.tc) / T.contD), 10); }
+        dust = [];
+      }
+      function drawTool(x, y, active, lift) {
+        const yy = y - lift;
+        const g = cx.createLinearGradient(x - 26, 0, x + 26, 0); g.addColorStop(0, '#7D8AA3'); g.addColorStop(.45, '#E3E9F4'); g.addColorStop(1, '#6B7890');
+        cx.fillStyle = g; cx.fillRect(x - 26, yy - 160, 52, 112); cx.fillStyle = '#F28C28'; cx.fillRect(x - 26, yy - 82, 52, 8);
+        cx.fillStyle = '#39445A'; cx.fillRect(x - 11, yy - 48, 22, 30); cx.fillStyle = '#C9D3E3'; cx.fillRect(x - 3.5, yy - 20, 7, 16);
+        cx.fillStyle = '#E3B93C'; cx.beginPath(); cx.moveTo(x - 4.5, yy - 6); cx.lineTo(x + 4.5, yy - 6); cx.lineTo(x + 2, yy + 5); cx.lineTo(x - 2, yy + 5); cx.closePath(); cx.fill();
+        if (active) { const r = cx.createRadialGradient(x, yy + 2, 0, x, yy + 2, 34); r.addColorStop(0, cfg().wet ? 'rgba(120,200,255,.55)' : 'rgba(255,160,60,.7)'); r.addColorStop(1, 'rgba(255,160,60,0)'); cx.fillStyle = r; cx.fillRect(x - 40, yy - 34, 80, 80); }
+      }
+      function drawCrown(p) {
+        const blk = cfg().blank === 'block', emax = state.mat === 'emax' || blk;
+        const c = blk ? mix(BLUE, shadeRGB(), p.sheen) : shadeRGB(); /* التبلور: ينتقل لون التاج إلى لون الحالة */
+        const g = cx.createLinearGradient(0, CB.y, 0, CB.y + CB.h);
+        g.addColorStop(0, rgb(mix(c, [255, 255, 255], .35))); g.addColorStop(.55, rgb(c)); g.addColorStop(1, rgb(mix(c, [60, 40, 10], .22)));
+        cx.fillStyle = rgb(mix(c, [255, 255, 255], .12)); conns.forEach(k => cx.fillRect(k.x, k.y, k.w, k.h));
+        cx.fillStyle = g; cx.fill(crown);
+        cx.save(); cx.clip(crown);
+        const hg = cx.createLinearGradient(CB.x, 0, CB.x + CB.w, 0); hg.addColorStop(0, 'rgba(255,255,255,0)'); hg.addColorStop(.25, `rgba(255,255,255,${emax ? .45 : .22})`); hg.addColorStop(.5, 'rgba(255,255,255,0)'); hg.addColorStop(1, 'rgba(0,0,0,.14)');
+        cx.fillStyle = hg; cx.fillRect(CB.x, CB.y, CB.w, CB.h);
+        if (p.sheen > 0 && p.sheen < 1) { const sx = CB.x - 120 + (CB.w + 240) * p.sheen, sg = cx.createLinearGradient(sx - 70, 0, sx + 70, 0); sg.addColorStop(0, 'rgba(255,255,255,0)'); sg.addColorStop(.5, 'rgba(255,255,255,.85)'); sg.addColorStop(1, 'rgba(255,255,255,0)'); cx.fillStyle = sg; cx.fillRect(CB.x, CB.y, CB.w, CB.h); }
+        cx.restore();
+        cx.strokeStyle = 'rgba(0,0,0,.25)'; cx.lineWidth = 1.5; cx.stroke(crown);
+      }
+      function setPhase(i) { stepsEl.forEach((e, k) => { e.classList.toggle('on', k === i); e.classList.toggle('done', k < i); }); }
+      const steel = (x, y, w, h) => { const kg = cx.createLinearGradient(x, 0, x + w, 0); kg.addColorStop(0, '#6B7890'); kg.addColorStop(.5, '#C9D3E3'); kg.addColorStop(1, '#6B7890'); cx.fillStyle = kg; cx.fillRect(x, y, w, h); };
+
+      function nextLoop() { const c = cfg(); if (c.discs) { discIdx = discIdx % c.discs + 1; upd(); } reset(); }
+
+      function frame(now) {
+        requestAnimationFrame(frame);
+        const dt = Math.min(.05, (now - last) / 1000); last = now; if (!vis) return;
+        if (playing) tl += dt * speed; if (tl > T.end) nextLoop();
+        const c = cfg();
+        /* تقدم الأداة */
+        let tool = null, active = false, phase = 0, lift = 0, label = '';
+        if (tl < T.rough0) phase = 0;
+        else if (tl < T.cont0) { phase = 1; const t = Math.min(1, (tl - T.rough0) / T.roughD); s1 = advance(P1, s1, P1.len * t, 27); tool = at(P1, s1); active = t < 1; }
+        else if (tl < T.fin0) {
+          phase = 2; const t = Math.min(1, Math.max(0, (tl - T.cont0 - T.tc) / T.contD));
+          if (s2 === 0) prev = P2.a[0]; s2 = advance(P2, s2, P2.len * t, 10); tool = at(P2, s2); active = t > 0 && t < 1;
+          if (c.tools && tl < T.cont0 + T.tc) { lift = 150 * Math.sin(Math.PI * (tl - T.cont0) / T.tc); label = 'تبديل الأداة  T01 ← T02'; active = false; }
+        } else phase = 3;
+        setPhase(phase); if (!dragging) seekEl.value = Math.min(tl, +seekEl.max);
+
+        /* الرسم */
+        cx.clearRect(0, 0, W, H);
+        const bg = cx.createRadialGradient(W / 2, H / 2, 40, W / 2, H / 2, 480); bg.addColorStop(0, '#0F2A4F'); bg.addColorStop(1, '#050B18'); cx.fillStyle = bg; cx.fillRect(0, 0, W, H);
+        cx.strokeStyle = 'rgba(159,194,230,.06)'; cx.lineWidth = 1; for (let x = 0; x < W; x += 40) { cx.beginPath(); cx.moveTo(x, 0); cx.lineTo(x, H); cx.stroke(); } for (let y = 0; y < H; y += 40) { cx.beginPath(); cx.moveTo(0, y); cx.lineTo(W, y); cx.stroke(); }
+        /* المثبّت */
+        if (c.blank === 'block') {
+          cx.fillStyle = '#16213A'; cx.beginPath(); rr(cx, BLK.x - 16, BLK.y - 16, BLK.w + 32, BLK.h + 32, 34); cx.fill(); cx.strokeStyle = 'rgba(255,255,255,.12)'; cx.lineWidth = 2; cx.stroke();
+          cx.fillStyle = '#3A465F'; cx.fillRect(DCX - 22, 18, 44, BLK.y - 14); cx.fillStyle = '#6B7890'; cx.fillRect(DCX - 22, 18, 44, 6);
+        } else {
+          cx.fillStyle = '#16213A'; cx.beginPath(); cx.arc(DCX, DCY, DOUT + 16, 0, 7); cx.fill(); cx.strokeStyle = 'rgba(255,255,255,.12)'; cx.lineWidth = 2; cx.stroke();
+          [96, W - 96 - 52].forEach(x => { steel(x, DCY - 56, 52, 112); cx.fillStyle = '#F28C28'; cx.fillRect(x, DCY - 4, 52, 6); });
+        }
+        /* ميل المحور A أثناء التشغيل (4 محاور ±20° / 5 محاور أوسع) */
+        const sx = (tl < T.rough0 + .5 || tl > T.fin0) ? 1 : Math.cos((c.axes === 5 ? .5 : .35) * Math.sin(tl * 1.4));
+        const X = x => DCX + (x - DCX) * sx;
+        cx.save(); cx.translate(DCX, 0); cx.scale(sx, 1); cx.translate(-DCX, 0);
+        cx.globalAlpha = Math.min(1, .25 + tl / .7); /* دخول القرص/البلوك الجديد */
+        cx.drawImage(mat, 0, 0);
+        const sheen = tl > T.fin0 ? Math.min(1, (tl - T.fin0) / T.finD) : 0;
+        drawCrown({ sheen });
+        if (tl < T.rough0 + .6) { /* مرحلة التصميم: مخطط CAD متوهج */
+          cx.save(); cx.setLineDash([10, 8]); cx.lineDashOffset = -tl * 40; cx.strokeStyle = '#E3B93C'; cx.lineWidth = 3; cx.shadowColor = '#E3B93C'; cx.shadowBlur = 18; cx.stroke(crown); cx.restore();
+        }
+        cx.restore(); cx.globalAlpha = 1;
+        /* غبار (جاف) أو رذاذ تبريد (رطب) */
+        for (let i = dust.length - 1; i >= 0; i--) { const d = dust[i]; if (playing) { d.l -= dt * speed * 1.6; d.x += d.vx * dt * speed; d.y += d.vy * dt * speed; d.vy += 260 * dt * speed; } if (d.l <= 0) { dust.splice(i, 1); continue; } cx.globalAlpha = Math.max(0, d.l); cx.fillStyle = d.c ? '#8FD0FF' : '#F2EBDA'; cx.fillRect(X(d.x), d.y, c.wet ? 3.5 : 3, c.wet ? 5 : 3); }
+        cx.globalAlpha = 1;
+        if (tool) {
+          const tx = X(tool[0]);
+          if (c.wet && active) { cx.save(); cx.strokeStyle = 'rgba(143,208,255,.75)'; cx.lineWidth = 2.5; cx.setLineDash([8, 6]); cx.lineDashOffset = -tl * 120; [-70, 70].forEach(dx => { cx.beginPath(); cx.moveTo(tx + dx, tool[1] - 110); cx.lineTo(tx, tool[1] + 2); cx.stroke(); }); cx.restore(); }
+          drawTool(tx, tool[1], active, lift);
+        } else if (tl >= T.fin0) { const k = Math.min(1, (tl - T.fin0) / .9); drawTool(P2.a[P2.a.length - 1][0], P2.a[P2.a.length - 1][1], false, 260 * k * k); }
+        if (label) { cx.fillStyle = 'rgba(227,185,60,.95)'; cx.font = '700 22px IBM Plex Sans Arabic, sans-serif'; cx.textAlign = 'center'; cx.fillText(label, W / 2, 38); }
+        /* مخزن الأقراص (وضع التشغيل المتواصل): اثنا عشر قرصًا */
+        if (c.discs) {
+          for (let i = 0; i < c.discs; i++) { const y = 150 + i * 24, cur = i + 1 === discIdx, done = i + 1 < discIdx; cx.fillStyle = cur ? '#E3B93C' : done ? 'rgba(61,220,132,.7)' : 'rgba(255,255,255,.18)'; cx.beginPath(); rr(cx, 748, y, 34, 14, 5); cx.fill(); }
+          cx.fillStyle = '#8FA0BF'; cx.font = '600 12px Space Grotesk, sans-serif'; cx.textAlign = 'center'; cx.fillText('DISCS', 765, 138);
+        }
+        if (tl > T.fin0 + T.finD) { const a = .5 + .5 * Math.sin(tl * 4); cx.fillStyle = `rgba(61,220,132,${.7 + .3 * a})`; cx.font = '700 26px IBM Plex Sans Arabic, sans-serif'; cx.textAlign = 'center'; cx.fillText('✓ اكتمل الحفر', W / 2, H - 24); }
+      }
+
+      /* ربط الماكينات والتحكم */
+      const tabs = $('#mTabs');
+      function pick(i, btn) {
+        $$('button', tabs).forEach(x => { x.classList.remove('on'); x.setAttribute('aria-selected', 'false'); }); btn.classList.add('on'); btn.setAttribute('aria-selected', 'true');
+        mach.i = i; T = mkT(); seekEl.max = (T.fin0 + T.finD).toFixed(2); discIdx = 1; upd(); reset();
+      }
+      MACHINES.forEach((M, i) => {
+        const b = document.createElement('button'); b.type = 'button'; b.textContent = M.n; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', i === 0); if (i === 0) b.classList.add('on');
+        b.addEventListener('click', () => pick(i, b)); tabs.appendChild(b);
+      });
+      hooks.push(() => { upd(); reset(); }); upd();
+      $('#millReplay').addEventListener('click', () => { reset(); playing = true; playBtn.textContent = '⏸'; });
+      playBtn.addEventListener('click', () => { playing = !playing; playBtn.textContent = playing ? '⏸' : '▶'; playBtn.setAttribute('aria-label', playing ? 'إيقاف مؤقت' : 'تشغيل'); });
+      seekEl.addEventListener('input', () => { dragging = true; seek(+seekEl.value); });
+      seekEl.addEventListener('change', () => { dragging = false; });
+      $$('#cSpd button').forEach(b => b.addEventListener('click', () => { speed = +b.dataset.s; $$('#cSpd button').forEach(x => x.classList.toggle('on', x === b)); }));
+      new IntersectionObserver(([e]) => { vis = e.isIntersecting; last = performance.now(); }).observe(cv);
+      reset();
+      if (reduce) { playing = false; playBtn.textContent = '▶'; seek(T.fin0 + T.finD + .1); }
+      requestAnimationFrame(frame);
+    }
+    try { initMill(); } catch (err) { console.warn('mill', err); }
+    try { initCrown(); } catch (err) { console.warn('crown', err); }
+    renderSum();
+
+    /* شبكة جسيمات "مسح رقمي" */
+    const cv = $('#mesh'), cx = cv.getContext('2d');
+    let W, H, pts = [], mouse = { x: -999, y: -999 }, run = true, dpr = Math.min(devicePixelRatio || 1, 2);
+    const resize = () => {
+      W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const n = Math.round(Math.min(90, W * H / 14000));
+      pts = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 }));
+    };
+    const draw = () => {
+      cx.clearRect(0, 0, W, H);
+      for (let i = 0; i < pts.length; i++) {
+        const p = pts[i];
+        if (!reduce) { p.x += p.vx; p.y += p.vy; }
+        if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
+        const dm = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+        if (dm < 160 && !reduce) { p.x += (mouse.x - p.x) * .012; p.y += (mouse.y - p.y) * .012; }
+        cx.fillStyle = dm < 160 ? 'rgba(246,219,138,.95)' : 'rgba(159,194,230,.55)';
+        cx.beginPath(); cx.arc(p.x, p.y, dm < 160 ? 2.4 : 1.5, 0, 6.3); cx.fill();
+        for (let j = i + 1; j < pts.length; j++) {
+          const q = pts[j], d = Math.hypot(p.x - q.x, p.y - q.y);
+          if (d < 130) { cx.strokeStyle = `rgba(227,185,60,${(1 - d / 130) * .28})`; cx.lineWidth = 1; cx.beginPath(); cx.moveTo(p.x, p.y); cx.lineTo(q.x, q.y); cx.stroke(); }
+        }
+      }
+    };
+    const loop = () => { if (run) draw(); requestAnimationFrame(loop); };
+    resize(); addEventListener('resize', resize); loop();
+    new IntersectionObserver(([e]) => run = e.isIntersecting).observe($('#hero'));
+    $('#hero').addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+    $('#hero').addEventListener('pointerleave', () => mouse.x = mouse.y = -999);
+
+    /* إضاءة المؤشر + بقعة البطاقات */
+    if (fine) {
+      const g = $('#glow'); g.style.opacity = 1;
+      let gx = 0, gy = 0, tx = 0, ty = 0;
+      addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; });
+      (function f() { gx += (tx - gx) * .12; gy += (ty - gy) * .12; g.style.transform = `translate(${gx - 260}px, ${gy - 260}px)`; requestAnimationFrame(f); })();
+      $$('.b').forEach(b => b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); b.style.setProperty('--mx', (e.clientX - r.left) + 'px'); b.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
+      /* ميل ثلاثي الأبعاد */
+      const stage = $('#stage'), tilt = $('#tilt');
+      stage.addEventListener('pointermove', e => {
+        const r = stage.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        tilt.style.transform = `rotateY(${x * 26}deg) rotateX(${-y * 22}deg)`;
+      });
+      stage.addEventListener('pointerleave', () => tilt.style.transform = '');
+      tilt.style.transition = 'transform .25s ease-out';
+    }
+
+    /* دورة رسائل تلجرام */
+    const msgs = $$('.msg'); let mi = 0;
+    const cycle = () => { msgs.forEach((m, i) => m.classList.toggle('on', i <= mi)); mi = (mi + 1) % (msgs.length + 1); if (mi === 0) msgs.forEach(m => m.classList.remove('on')); };
+    cycle(); setInterval(cycle, 1500);
+
+    /* GSAP */
+    if (!window.gsap || reduce) { $$('[data-count]').forEach(c => c.textContent = c.dataset.count); return; }
+    gsap.registerPlugin(ScrollTrigger);
+    const start = 2.7; /* بعد شاشة البداية */
+
+    gsap.from('h1 .ln > span', { yPercent: 115, rotate: 4, duration: 1.1, ease: 'expo.out', stagger: .12, delay: start });
+    gsap.from('[data-hero]', { y: 30, opacity: 0, duration: 1, ease: 'power3.out', stagger: .12, delay: start + .3 });
+    gsap.from('.chip3d', { scale: 0, opacity: 0, duration: .8, ease: 'back.out(2)', stagger: .15, delay: start + .8 });
+
+    /* ظهور عند التمرير */
+    ScrollTrigger.batch('[data-r]', {
+      start: 'top 88%', once: true,
+      onEnter: els => gsap.fromTo(els, { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: .9, ease: 'power3.out', stagger: .1, overwrite: true })
+    });
+    gsap.set('[data-r]', { opacity: 0 });
+
+    /* عدّادات */
+    $$('[data-count]').forEach(el => {
+      const o = { v: 0 };
+      ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () => gsap.to(o, { v: +el.dataset.count, duration: 1.8, ease: 'power2.out', onUpdate: () => el.textContent = Math.round(o.v) }) });
+    });
+
+    /* خط الخطوات */
+    gsap.to('#lineFill', { scaleX: 1, ease: 'none', scrollTrigger: { trigger: '#steps', start: 'top 70%', end: 'bottom 60%', scrub: .6 } });
+
+    /* عنوان الفوتر + شريط التقدم + إخفاء الشريط العلوي */
+    gsap.fromTo('#mega', { xPercent: 8 }, { xPercent: -8, ease: 'none', scrollTrigger: { trigger: 'footer', start: 'top bottom', end: 'bottom bottom', scrub: true } });
+    gsap.to('.aurora', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
+    const nav = $('#nav'); let last = 0;
+    ScrollTrigger.create({ start: 0, end: 'max', onUpdate: s => {
+      gsap.set('#prog', { scaleX: s.progress });
+      const y = scrollY; nav.classList.toggle('hide', y > last && y > 400 && !links.classList.contains('open')); last = y;
+    } });
+
+    /* أزرار مغناطيسية */
+    if (fine) $$('.mag').forEach(b => {
+      b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); gsap.to(b, { x: (e.clientX - r.left - r.width / 2) * .3, y: (e.clientY - r.top - r.height / 2) * .4, duration: .4, ease: 'power3.out' }); });
+      b.addEventListener('pointerleave', () => gsap.to(b, { x: 0, y: 0, duration: .8, ease: 'elastic.out(1,.4)' }));
+    });
+  })();
+  </script>
+</body>
+</html>
